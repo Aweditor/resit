@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AW Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="picture/favicon.ico" type="image/x-icon"> 
+</head>
+<body>
+    <!-- /* >>>>>>>>>> NAVBAR <<<<<<<<<< */ -->
+    <nav class="navbar">
+        <div class="header">
+            <div class="logo"><a href="#">AW EDITOR</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#to-cimb">Cimb</a></li>
+                    <li><a href="#to-mbb">Mbb</a></li>
+                    <li><a href="#to-rhb">Rhb</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<!-- /* >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< */ -->
+    <div class="backG">
+        <div id="to-cimb" class="input-cimb">
+            <h3 class="tCimb">CIMB</h3>
+            </h3>
+            <div class="input-cimb-in">
+                <div class="input-one">
+                    <label class="padding-right">Date Time</label>
+                    <input id="nowcimb" type="button" class="now-right" value="Now" onclick="cimbnowdatetime()">
+                    <input class="ipHight" id="cimb-input-datetime" autocomplete="off" placeholder="Click NOW">
+                </div>
+                <div class="input-two">
+                    <label>No Ref</label>
+                    <input class="ipHight" id="cimb-input-ref" autocomplete="off" placeholder="Must 9 Digits" minlength="9" maxlength="9">
+                </div>
+                <div class="input-thre">
+                    <label>Amount</label>
+                    <input class="ipHight" id="cimb-input-amount" placeholder="Auto Comma" autocomplete="off"
+                        oninput={handleInput(event)} />
+                </div>
+                <div class="input-four">
+                    <button id="creatcimb" class="creat">CREAT</button>
+                </div>
+            </div>
+        </div>
+<!-- /* >>>>>>>>>> RESIT CIMB <<<<<<<<<< */ -->
+        <div>
+            <header>
+                <nav>
+                    <ul class="uli">
+                        <img src="picture/Logo1.png" class="my-logo">
+                        <strong>Successful</strong>
+                        <li>Ref</li>
+                        <li id="cimb-ref-edit"></li>
+                    </ul>
+                </nav>
+                <div class="dTime" id="cimb-datetime-edit">00 000 0000, 00:00:00 pm</div>
+            </header>
+            <div class="color">
+                <div class="content">
+                    <div class="inside-content">
+                        <div class="padding-bottom-10">
+                            <div>
+                                <div class="pay-one">
+                                    <div>To</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="padding-bottom-10">
+                            <div>
+                                <div class="pay">
+                                    <p>Account Number</p>
+                                    <strong>162059164522</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="padding-bottom-10">
+                            <div>
+                                <div class="pay1">
+                                    <p>Recipient Name</p>
+                                    <strong id="to-mbb" class="spacing">KURUMOORTHU BIN AJI SALIM</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="content-one">
+                        <h3>Amount</h3>
+                        <div class="margin-top">
+                            <strong class="text-amount">
+                                <span class="amount-bold">
+                                    <span class="money-one">MYR</span>
+                                    <span class="money">
+                                        <span id="cimb-amount-edit">0,000</span>.<span class="money-one">00</span>
+                                    </span>
+                                </span>
+                            </strong>
+                        </div>
+                        <div>
+                            <span class="bankCharge">Bank charges
+                                <strong class="text-caj-bold">
+                                    <span class="caj-one">MYR</span>
+                                    <span class="caj">0</span><span>.</span>
+                                    <span class="caj-one">00</span>
+                                </strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- >>>>>>>>>> BAR CHANGE MBB <<<<<<<<<< -->
+    <div class="backG1">
+        <div class="input-cimb">
+            <h3 class="tMbb">MAYBANK</h3>
+            <div class="input-cimb-in">
+                <div class="input-one">
+                    <label>Date Time</label>
+                    <input id="nowmbb" type="button" class="now-right" value="Now" onclick="mbbnowdatetime()">
+                    <input class="ipHight" id="mbb-input-datetime" autocomplete="off" placeholder="Click NOW">
+                </div>
+                <div class="input-two">
+                    <label>No Ref</label>
+                    <input class="ipHight" id="mbb-input-ref" autocomplete="off" placeholder="Must 10 Digits" minlength="10"
+                        maxlength="10">
+                </div>
+                <div class="input-thre">
+                    <label>Amount</label>
+                    <input class="ipHight" id="mbb-input-amount" placeholder="Auto Comma" autocomplete="off"
+                        oninput={handleInput(event)} />
+                </div>
+                <div class="input-four">
+                    <input onclick="onmbb()" class="creat" value="CREAT" type="button">
+                </div>
+            </div>
+        </div>
+<!-- /* >>>>>>>>>> RESIT MBB <<<<<<<<<< */ -->
+        <div>
+            <div class="header-mbb">
+                <div class="content-mbb">
+                    <img src="picture/Mbb.png" class="logo-mbb">
+                    <h3 class="h3-mbb">Open 3rd Party Transfer</h3>
+                    <div class="content-mbb-flex">
+                        <div class="content-mbb-50">
+                            <div class="content-mbb-margin">Status:</div>
+                            <div class="content-mbb-margin">Reference number:</div>
+                            <div class="content-mbb-margin">Transaction date:</div>
+                            <div class="amount-acc-margin">Amount:</div>
+                            <div class="amount-acc-margin">From Account:</div>
+                            <div class="content-mbb-margin">To Open 3rd Party Account:</div>
+                            <div class="content-mbb-margin">Account Holder Name:</div>
+                            <div class="content-mbb-margin">Recipient Reference:</div>
+                            <div id="to-rhb" class="content-mbb-margin">Other Transfer Details:</div>
+                        </div>
+                        <div class="font-right-bold">
+                            <div class="content-mbb-margin-color">Successful</div>
+                            <div id="mbb-ref-edit" class="content-mbb-margin">0123456789</div>
+                            <div id="mbb-datetime-edit" class="content-mbb-margin">00 000 0000 00:00:00</div>
+                            <div class="amount-acc-margin">RM<span id="mbb-amount-edit">0,000</span>.<span>00</span>
+                                <div class="amount-acc-margin">514682476694</div>
+                                <div class="content-mbb-margin">152219134636</div>
+                                <div class="content-mbb-margin">MOHD SUHAIRI BIN MOH</div>
+                                <div class="content-mbb-margin">Payment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- >>>>>>>>>> BAR CHANGE RHB <<<<<<<<<< -->
+    <div class="backG2">
+        <div class="input-cimb">
+            <h3 class="tMbb">RHB</h3>
+            <div class="input-cimb-in">
+                <div class="input-thre">
+                    <label>Amount</label>
+                    <input class="ipHight" id="rhb-input-amount" autocomplete="off" placeholder="Auto Comma" oninput={handleInput(event)} />
+                </div>
+                <div class="input-two">
+                    <label>Name Bank</label>
+                    <input class="ipHight" type="search" list="nameBank" autocomplete="off" id="rhb-input-ref" placeholder="C-Name Bank">
+                    <datalist id="nameBank">
+                        <option value="AEON Bank">
+                        <option value="Affin Bank Berhad">
+                        <option value="AGRO Bank">
+                        <option value="Alliance Bank Malaysia Berhad">
+                        <option value="AMBank">
+                        <option value="Bank Islam Malaysia Berhad">
+                        <option value="Bank Kerjasama Rakyat Malaysia">
+                        <option value="Bank Muamalat Malaysia Berhad">
+                        <option value="Bank Simpanan Nasional">
+                        <option value="BigPay">
+                        <option value="Boost eWallet">
+                        <option value="RHB">
+                        <option value="CIMB">
+                        <option value="Citibank Berhad">
+                        <option value="GXBank">
+                        <option value="HSBC Bank">
+                        <option value="MBSB Bank Berhad">
+                        <option value="OCBC Bank Malaysia Berhad">
+                        <option value="Public Bank">
+                        <option value="Shopee">
+                        <option value="Touch N Go Digital">
+                        <option value="United Overseas Bank Berhad">
+                    </datalist> 
+                </div>
+                <div class="input-four">
+                    <button onclick="onrhb()" class="creat" type="button">CREAT</button>
+                </div>
+            </div>
+<!-- /* >>>>>>>>>> RESIT MBB <<<<<<<<<< */ -->
+            <div class="header-rhb">
+                <div class="content-rhb">
+                    <div class="content-in-rhb">
+                        <div class="to-acc">
+                            <div class="font-size-color-font">To</div>
+                            <div class="acc-rhb2">MOHD FURTITURE SDN.BHD.8605533655</div>
+                        </div>
+                        <div class="color-rhb">
+                            <div class="flex-rhb">
+                                <div class="rhb-one">
+                                    <div class="font-size-color-font-1">Bank</div>
+                                    <div class="font-size-color-font-2" id="name-bank">Maybank</div>
+                                    <div class="font-size-color-font-3">Amount</div>
+                                    <div class="font-size-color-font-4">MYR <span id="amount-rhb">0,000</span><span>.00
+                                    </div>
+                                </div>
+                                <div class="rhb-one">
+                                    <div class="font-size-color-font-1">Payment Type</div>
+                                    <div class="font-size-color-font-2">Fund Transfer</div>
+                                    <div class="font-size-color-font-3">Recipient Reference</div>
+                                    <div class="font-size-color-font-4">Payment</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
