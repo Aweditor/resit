@@ -1,6 +1,6 @@
 console.log('Create By  : Awin \nUpload     : 03.09.2024')
 console.log('Fix Bug \nCIMB AM PM Fix  : 10.09.2024')
-console.log('Update New \nRhb C-Name bank  : 10.09.2024 \nButton Hover     : 10.09.2024 \nBG Color         : 10.09.2024 \nShadow Button    : 10.09.2024')
+console.log('Update New \nRhb C-Name bank  : 10.09.2024 \nButton Hover     : 10.09.2024 \nBG Color         : 10.09.2024 \nShadow Button    : 10.09.2024 \nRhb Add List Bank : 12.09.2024' )
 
 // Button
 const bottoncreatallcimb = document.getElementById('creatcimb')
