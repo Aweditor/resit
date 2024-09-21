@@ -4,97 +4,63 @@
     margin: 0px;
     padding: 0px;
 }
-/* >>>>>>>>>> NAVBAR <<<<<<<<<< */
+
 body {
     margin: 0px;
     padding: 0px;
     font-family: Arial;
+    width: 100%;
     height: 100vh;
+    box-sizing: border-box;
+    background-color: rgb(186, 186, 186);
 }
 
-.backG {
-    background-color: rgb(151, 151, 151);
-    padding: 0 0 30px 0;
-}
-
-.header {
-    width: 100%;
-    margin: auto;
-    margin-left: 30px;
-    margin-right: 30px;
-    position: relative;
-}
-
-.logo a {
-    margin-top: 3px;
-    font-size: 40px;
-    font-weight: bold;
-    float: left;
-    font-family: arial;
-    color: #ffffff;
-}
-
-.logo a:hover {
-    padding: 0 0 0 15px;
-    transition: 0.5s;
-}
-
-.menu {
-    float: right;
-}
-
-.navbar {
-    width: 100%;
-    margin: auto;
+/* >>>>>>>>>> NAVBAR <<<<<<<<<< */
+.all-Content {
     display: flex;
-    line-height: 60px;
-    background: black;
+}
+
+.contentNav {
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgb(0, 0, 0) 0px 0px 5px;
     position: fixed;
+    min-height: 100vh;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
+.contentNav img {
+    width: 130px;
+    padding: 10px;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.185);
 }
 
-nav ul li {
-    float: left;
-    margin: 2px 7px;
-}
-
-nav ul li a {
-    color: white;
-    font-weight: bold;
+.contentNav a {
+    margin: 0;
     font-size: 20px;
-    font-family: 'Segoe UI';
-    text-align: center;
-    opacity: 0.9;
-    padding:  15px;
-}
-
-nav ul li a:hover {
-    background-color: white;
+    font-weight: bold;
     color: black;
-    padding: 5px 15px;
-    border-radius: 30px;
-    transition: 0.3s;
-    opacity: 1;
+    line-height: 45px;
+    align-items: center;
+    text-align: center;
+}
+a:hover {
+    background: rgb(255, 111, 0);
+    color: white;
 }
 
 
 /* >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< */
-.input-cimb {
-    width: 80%;
-    height: auto;
-    margin: auto;
-    font-size: 20px;
-}
-
-.input-cimb-in {
+.input-in {
+    background-color: #134eff;
+    max-width: 300px;
+    padding: 10px;
+    gap: 10px;
+    margin: 10px 10px 10px 0;
+    border-radius: 5px;
     display: flex;
-    align-items: center; 
+    flex-direction: column;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
 .change {
@@ -102,88 +68,146 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-.ipHight {
-    padding: 2px 0;
-    border-radius: 3px; 
-}
-
 .input-one {
-    background-color: #2E073F;
-    color: white;
-    font-weight: bold;
+    background-color: #ffffff;
     padding: 5px;
-    border-radius: 5px;
-    margin: 0 0 10px 0;
-    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+.tableInput {
+    width: 100%;
+    height: 25px;
+    margin: 0 5px;
+    font-size: 15px;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.inputAndButton {
+    display: flex;
+    gap: 10px;
 }
 
-.input-two {
-    background-color: #180161;
-    color: white;
-    font-weight: bold;
-    margin: 0 10px 10px 10px;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+.ref-amount-gap{
+    display: grid;
+    gap: 10px ;
 }
 
-.input-thre {
-    background-color: #800000;
-    color: white;
-    font-weight: bold;
+.input-two , .input-thre {
+    background-color: #ffff;
     padding: 5px;
-    border-radius: 5px;
-    margin: 0 0 10px 0;
-    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.ph-calendar, .ph-arrow-square-right, .ph-currency-circle-dollar, .ph-identification-card {
+    font-size: 25px;
+    color: blue;
+    border-right: 2px solid rgba(0, 0, 0, 0.286);
+    padding-right: 3px;
 }
 
 .input-four {
-    margin: auto;
-    width: 80%;
+    border-radius: 10px;
+    background-color: rgb(69, 69, 69);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.creat, .hide5s {
+    height: 50%;
+    width: 100%;
+    background: transparent;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .creat {
-    background-color: white;
-    font-family: arial;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    width: 90px;
-    height: 50px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 0 10px 10px 10px;
-    box-shadow: 4px 4px 4px rgb(0, 0, 0);
+    color: chartreuse;
+}
+.hide5s {
+    color: red;
 }
 
 .creat:hover {
-    background-color: black;
+    background-color: chartreuse;
+    color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.hide5s:hover {
+    background-color: red;
     color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.tCimb {
-    padding: 90px 0 0 0;
+.now-button {
+    padding: 5px;
+    font-size: 12px;
     color: white;
-    font-size: 30px;
-}
-
-.now-right {
-    padding: 0 5px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(69, 69, 69);
+    box-shadow: 1px 1px 2px rgb(0, 0, 0);
     cursor: pointer;
 }
 
-.now-right:hover {
-    background-color: yellow;
+.now-button:hover {
+    background-color: chartreuse;
+    color: black;
 }
 
+@media print, (max-width: 825px) {
+    .contentNav {
+        display: none;
+    }
+
+    .three-content {
+        margin: 0;
+    }
+}
+
+@media print, (min-width: 825px) {
+
+
+    .three-content {
+        margin-left: 130px;
+    }
+}
+
+.three-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px  ;
+}
+
+.input-cimb{
+    width: 90%;
+    align-items: center;
+    padding: 10px 0;
+}
 
 /* >>>>>>>>>> RESIT CIMB <<<<<<<<<<>>>>>>>>>> RESIT CIMB <<<<<<<<<<>>>>>>>>>> RESIT CIMB <<<<<<<<<< */
+.shadow{
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+}
+
 header {
     background-color: #e5e5e5;
-    width: 80%;
-    height: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
@@ -198,90 +222,84 @@ header {
 nav {
     margin: 0 0 0 17px;
 }
-
 nav ul {
     display: flex;
     list-style-type: none;
     align-items: center;
 }
-
 nav ul li {
     margin: 2px;
 }
-
 nav ul strong {
     color: #7db680;
     padding: 0px 3px 0px 12px;
 }
-
 .dTime {
     padding: 0 18px 0 0;
 }
-
 .my-logo {
     width: 25px;
     margin-right: auto;
     margin: 0;
 }
-
 .color {
     background-color: #f3f3f3;
-    width: 80%;
     height: auto;
     margin: auto;
     font-family: "Open Sans", sans-serif;
     box-shadow: black;
 }
-
 .content {
     padding-right: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-
 .inside-content {
-    margin: 0 0 0 20px;
+    margin-left: 20px;
 }
-
 .padding-bottom-10 {
     padding-top: 10px;
 }
-
 .pay-one {
     padding-top: 10px;
     font-size: 20px;
     font-weight: 730;
     letter-spacing: -1.50px;
 }
-
 .pay1 {
     padding-top: 7px;
 }
-
-.spacing{
-    letter-spacing: -.50px;
+.change-nameBank, .change-accBank {
+    letter-spacing: -.30px;
+    border: 0;
+    background: transparent;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding-block: 0;
+    padding-inline: 0;
+    width: 350px;
 }
-
+.change-accBank:hover, .change-nameBank:hover{
+    background-color: chartreuse;
+    border-radius: 5px;
+}
 .content-one {
     text-align: right;
     padding: 10px 8px 10px 0;
     margin: 7px 10px 7px 0;
 }
-
 h3 {
     font-size: 20px;
     font-weight: 700;
 }
-
 .margin-top {
     margin: 10px 0 7px;
 }
-
 .bankCharge {
     font-size: 11.5px;
 }
-
 .money-one {
     font-size: 12px !important;
     line-height: 1.50em;
@@ -292,37 +310,25 @@ h3 {
 .money {
     font-size: 20px;
 }
-
 .caj-one {
     font-size: 10px !important;
     line-height: 2em;
     vertical-align: top;
 }
-
 .caj{
     font-size: 14px;
 }
 
 
-/* >>>>>>>>>> BAR CHANGE MBB <<<<<<<<<< >>>>>>>>>> BAR CHANGE MBB <<<<<<<<<< >>>>>>>>>> BAR CHANGE MBB <<<<<<<<<<  */
-.backG1 {
-    background-color: rgb(151, 151, 151);
-    padding: 0 0 30px 0;
-}
-
-.tMbb {
-    color: white;
-    font-size: 30px;
-}
-
 
 /* >>>>>>>>>> RESIT MBB <<<<<<<<<< >>>>>>>>>> RESIT MBB <<<<<<<<<< >>>>>>>>>> RESIT MBB <<<<<<<<<<  */
 
 .header-mbb {
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-content: center;
     align-items: center;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
 .content-mbb {
@@ -330,7 +336,7 @@ h3 {
     margin: auto;
     justify-content: center;
     align-items: center;
-    padding: 25px 0 30px 25px;
+    padding: 10px;
 }
 
 .logo-mbb {
@@ -350,7 +356,8 @@ h3 {
 }
 
 .content-mbb-50 {
-    width: 300px;
+    width: 350px;
+    min-width: 300px;
 }
 
 .content-mbb-margin {
@@ -359,6 +366,25 @@ h3 {
 
 .amount-acc-margin {
     margin: 31px 0;
+}
+
+.edit-acc-mbb, .edit-acc-namebank {
+    margin: 31px 0;
+    padding-block: 0;
+    padding-inline: 0;
+    border: 0;
+    background: transparent;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+}
+.edit-acc-namebank {
+    margin: 0 0 5px 0;
+}
+
+.edit-acc-mbb:hover, .edit-acc-namebank:hover {
+    background-color: chartreuse;
+    border-radius: 5px;
 }
 
 .font-right-bold {
@@ -373,16 +399,11 @@ h3 {
 
 
 /* >>>>>>>>>>> RHB <<<<<<<<<<< >>>>>>>>>>> RHB <<<<<<<<<<< >>>>>>>>>>> RHB <<<<<<<<<<< */
-
-.backG2 {
-    background-color: rgb(151, 151, 151);
-    padding: 0 0 50px 0;
-}
-
 .header-rhb {
     background-color: #1cff82;
     font-size: 15px;
     width: 100%;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
 .content-rhb {
@@ -432,6 +453,15 @@ h3 {
     margin: 0px 0 0 0;
     font-size: 16px;
     color: rgba(46, 46, 46, 0.994);
+    border: 0;
+    background: transparent;
+    padding-block: 0;
+    padding-inline: 0;
+    width: 100%;
+}
+.acc-rhb2:hover{
+    background-color: chartreuse;
+    border-radius: 5px;
 }
 
 .color-rhb{
@@ -449,3 +479,87 @@ h3 {
     width: 50%;
 }
 
+.list-box ul {
+    background-color: rgb(241, 240, 240);
+    width: 182px;
+    margin: 0 0 0 2px;
+    padding: 0;
+    max-height: 150px;
+    overflow: auto;
+    position: absolute;
+    font-size: 13px;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.167);
+
+}
+
+.list-box ul li {
+    list-style-type: none;
+    border-radius: 5px;
+    padding: 8px 5px;
+    cursor: pointer;
+    font-family: arial;
+}
+
+.list-box ul li:hover {
+    background-color: rgba(0, 0, 0, 0.142);
+}
+
+
+/* RESIT HLB */
+.content-hlb {
+    background-color: #fff;
+    padding-top: 10px; 
+    margin-bottom: 150px;
+    width: auto;
+}
+
+.content-hlb-in {
+    display: flex;
+    width: 100%;
+    color: #444444;
+}
+.content-left {
+    width: 100%;
+    max-width: 350px;
+    font-weight: bold;
+}
+
+.content-left div, .content-right div {
+   padding-top: 16px !important;
+   padding-left: 20px;
+   height: 30px;
+   font-family: 'Helvetica', Arial, sans-serif;
+}
+
+.successful-hlb{
+    color: #1ca344;
+    font-weight: bold;
+}
+
+.content-right {
+    width: 100%;
+}
+
+.input-edit-hlb::placeholder {
+    color: #444444;
+}
+
+.bg-color-hlb {
+    background-color: #f4f4f4;
+}
+
+.input-edit-hlb {
+    width: 95%;
+    padding-block: 0;
+    padding-inline: 0;
+    border: 0;
+    background: transparent;
+    font-family: 'Helvetica', Arial, sans-serif;
+    font-size: 16px;
+    color: #444444;
+}
+
+.input-edit-hlb:hover{
+    background-color: chartreuse;
+}
