@@ -1,6 +1,6 @@
 console.log('Create By  : Awin \nUpload     : 03.09.2024 \nRemodel    : 21.09.2024')
-console.log('Fix Bug \nCIMB AM PM Fix  : 10.09.2024')
-console.log('Update New \nRhb C-Name bank  : 10.09.2024 \nButton Hover     : 10.09.2024 \nBG Color         : 10.09.2024 \nShadow Button    : 10.09.2024  \nInput Change     : 21.09.2024 \nButton Hide      : 21.09.2024 \nDrop Down        : 21.09.2024 \nResit HLB        : 21.09.2024')
+console.log('Fix Bug \nCIMB AM PM Fix  : 10.09.2024 \nC-Name Bank     : 22.09.2024')
+console.log('New Update \nRhb C-Name bank  : 10.09.2024 \nButton Hover     : 10.09.2024 \nBG Color         : 10.09.2024 \nShadow Button    : 10.09.2024  \nInput Change     : 21.09.2024 \nButton Hide      : 21.09.2024 \nDrop Down        : 21.09.2024 \nResit HLB        : 21.09.2024')
 
 // Button
 const bottoncreatallcimb = document.getElementById('creatcimb')
@@ -30,7 +30,6 @@ function cimbclick() {
     bottoncreatallcimb.addEventListener('click', cimbclick)
 
 function cimbnowdatetime() {
-
     let fulldate = new Date();
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let dd = fulldate.getDate();
@@ -40,8 +39,6 @@ function cimbnowdatetime() {
     let min = fulldate.getMinutes();
     let sec = fulldate.getSeconds();
     let ampm = hou >= 12 ? 'pm' : 'am';
-
-    
 
     hou = hou % 12;
     hou = hou ? hou : 12;
@@ -77,11 +74,6 @@ function cimbnowdatetime() {
         },5000)
     }
     
-    
-    
-    
-    
-
 // >>>>>>>>>> MBB CHANGE <<<<<<<<<<
 const inputrefmbb = document.getElementById('mbb-input-ref')
 const refeditmbb = document.getElementById('mbb-ref-edit')
@@ -91,7 +83,6 @@ const datetimeeditmbb = document.getElementById('mbb-datetime-edit')
 
 const inputamountmbb = document.getElementById('mbb-input-amount')
 const amounteditmbb = document.getElementById('mbb-amount-edit')
-
 function onmbb() {
     refeditmbb.innerHTML = inputrefmbb.value;
     datetimeeditmbb.innerHTML = inputdatetimembb.value;
@@ -153,36 +144,34 @@ function mbbnowdatetime() {
     let Keywords = [
         'AGRO Bank','Alliance Bank Malaysia Berhad','AMBank','Affin Bank Berhad','Bank Islam Malaysia Berhad','Bank Kerjasama Rakyat Malaysia','Bank Muamalat Malaysia Berhad','Bank Simpanan Nasional','BigPay','Boost Bank','Boost eWallet','CIMB','Citibank Berhad','GXBank','Hong Leong Bank Berhad','Maybank','HSBC Bank','MBSB Bank Berhad','OCBC Bank Malaysia Berhad','Public Bank','Shopee','Touch N Go Digital','United Overseas Bank Berhad',
     ];
-    
-    const listBox = document.querySelector('.list-box');
-    const inputbox = document.getElementById('rhb-input-ref');
-    
+    const listBoxRhb = document.getElementById('list-box-rhb');
+    const Rhbinputbox = document.getElementById('rhb-input-ref');
     function onkey(){
-        const inputbox = document.getElementById('rhb-input-ref');
-        let result = [];
-        let input = inputbox.value;
+        const Rhbinputbox = document.getElementById('rhb-input-ref');
+        let resultRHB = [];
+        let input = Rhbinputbox.value;
         if(input.length){
-            result = Keywords.filter((keyword)=> {
+            resultRHB = Keywords.filter((keyword)=> {
                return keyword.toLowerCase().includes(input.toLowerCase());
             });
-            console.log(result)
+            console.log(resultRHB)
         }
-        display(result);
-        if(!result.length){
-            listBox.innerHTML = '';
+        displayRHB(resultRHB);
+        if(!resultRHB.length){
+            listBoxRhb.innerHTML = '';
         }
     }
     
-    function display(result){
-        const content = result.map((list)=> {
-            return "<li onclick=selectInput(this)>" + list + "</li>";
+    function displayRHB(resultRHB){
+        const content = resultRHB.map((listRHB)=> {
+            return "<li onclick=selectInputRHB(this)>" + listRHB + "</li>";
         });
-        listBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+        listBoxRhb.innerHTML = "<ul>" + content.join('') + "</ul>";
     }
     
-    function selectInput(list) {
-        inputbox.value = list.innerHTML
-        listBox.innerHTML = '';
+    function selectInputRHB(listRHB) {
+        Rhbinputbox.value = listRHB.innerHTML
+        listBoxRhb.innerHTML = '';
     }
 
     function hideRHB() {
@@ -191,9 +180,6 @@ function mbbnowdatetime() {
             document.getElementById('hideRHB').style.display = "";
         },5000)
     }
-
-
-
 
    // >>>>>>>>>> HLB CHANGE <<<<<<<<<<
    let datetimehlb = document.getElementById('date-time-hlb');
@@ -205,7 +191,6 @@ function mbbnowdatetime() {
 
    let namebankhlb = document.getElementById('name-bank-hlb');
    let hlbinputnamebank = document.getElementById('hlb-input-namebank');
-
 
    function onhlb() {
        datetimehlb.innerHTML = hlbinputdatetime.value;
@@ -222,7 +207,6 @@ function mbbnowdatetime() {
 }
 
    function hlbnowdatetime() {
-
     let fulldate = new Date();
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let dd = fulldate.getDate();
@@ -257,41 +241,36 @@ function mbbnowdatetime() {
 
     }
 
-
-
-
     let Keywordshlb = [
         'AEON BANK','AFFIN BANK BERHAD','AGROBANK','ALLIANCE BANK MALAYSIA BERHAD','AMBANK/AMFINANCE BERHAD','BANK ISLAM MALAYSIA BERHAD','BANK KERJASAMA RAKYAT MALAYSIA BERHAD','BANK MUAMALAT MALAYSIA BERHAD','BANK SIMPANAN NASIONAL BERHAD','BIGPAY EWALLET','BOOST BANK','CIMB BANK BERHAD','CITIBANK','GXBank','HSBC BANK MALAYSIA BERHAD','MAYBANK BERHAD','MBSB BANK BERHAD','OCBC BANK (M) BHD/OCBC AL-AMIN BANK BHD','PUBLIC BANK/PUBLIC FINANCE BERHAD','RHB BANK BERHAD','UNITED OVERSEAS BANK (MALAYSIA) BERHAD',"TOUCH 'n GO",
     ];
-    
     const listBoxhlb = document.getElementById('list-box-hlb');
     const hlbinputbox = document.getElementById('hlb-input-namebank');
-    
     function onkeyhlb(){
         const hlbinputbox = document.getElementById('hlb-input-namebank');
-        let result = [];
+        let resultHLB = [];
         let input = hlbinputbox.value;
         if(input.length){
-            result = Keywordshlb.filter((keyword)=> {
+            resultHLB = Keywordshlb.filter((keyword)=> {
                return keyword.toLowerCase().includes(input.toLowerCase());
             });
-            console.log(result)
+            console.log(resultHLB)
         }
-        display(result);
-        if(!result.length){
+        displayHLB(resultHLB);
+        if(!resultHLB.length){
             listBoxhlb.innerHTML = '';
         }
     }
     
-    function display(result){
-        const content = result.map((list)=> {
-            return "<li onclick=selectInput(this)>" + list + "</li>";
+    function displayHLB(resultHLB){
+        const content = resultHLB.map((listHLB)=> {
+            return "<li onclick=selectInputHlb(this)>" + listHLB + "</li>";
         });
         listBoxhlb.innerHTML = "<ul>" + content.join('') + "</ul>";
     }
     
-    function selectInput(list) {
-        hlbinputbox.value = list.innerHTML
+    function selectInputHlb(listHLB) {
+        hlbinputbox.value = listHLB.innerHTML
         listBoxhlb.innerHTML = '';
     }
    
