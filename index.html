@@ -4,7 +4,7 @@
 <head>
     <title>AW Editor</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="picture/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="Png Game/LogoAW.ico" >
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
@@ -13,15 +13,19 @@
     <div class="all-Content">
         <div class="contentNav">
             <img src="picture/Logo.png" alt="">
-            <a href="#to-cimb">CIMB</a>
-            <a href="#to-mbb">MBB</a>
-            <a href="#to-rhb">RHB</a>
-            <a href="#to-hlb">HLB</a>
+            <div class="button-bank">
+                <a href="#to-cimb">CIMB</a>
+                <a href="#to-mbb">MBB</a>
+                <a href="#to-rhb">RHB</a>
+                <a href="#to-hlb">HLB</a>
+                <a href="#to-pbb">PBB</a>
+            </div>
+            <a class="pngGame" href="Png Game/index.html" target="_blank">PNG GAME</a>
         </div>
 
         <!-- /* >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< */ -->
         <div class="three-content">
-            <div  id="to-cimb" class="input-cimb">
+            <div id="to-cimb" class="input-cimb">
                 <div>
                     <div id="hideCIMB" class="input-in">
                         <div class="input-one">
@@ -210,7 +214,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- /* >>>>>>>>>> RESIT MBB <<<<<<<<<< */ -->
+                <!-- /* >>>>>>>>>> RESIT RHB <<<<<<<<<< */ -->
                 <div class="header-rhb">
                     <div class="content-rhb">
                         <div class="content-in-rhb">
@@ -248,11 +252,11 @@
                         <i class="ph ph-calendar"></i>
                         <input class="tableInput" id="hlb-input-datetime" autocomplete="off" placeholder="Date & Time"
                             maxlength="24">
-                        <button id="nowhlb" class="now-button" onclick="hlbnowdatetime()">NOW</button>
+                        <button class="now-button" onclick="hlbnowdatetime()">NOW</button>
                     </div>
                     <div class="inputAndButton">
                         <div class="ref-amount-gap">
-                            
+
                             <div class="input-thre">
                                 <i class="ph ph-currency-circle-dollar"></i>
                                 <input class="tableInput" id="hlb-input-amount" placeholder="Amount" maxlength="7"
@@ -269,7 +273,7 @@
                             <button id="creatcimb" class="creat" onclick="onhlb()">Creat</button>
                             <button id="hide5s" class="hide5s" onclick="hideHLB()">Hide5s</button>
                         </div>
-                        
+
                     </div>
                 </div>
                 <!-- /* >>>>>>>>>> RESIT HLB <<<<<<<<<< */ -->
@@ -291,26 +295,139 @@
                         <div class="content-right">
                             <div class="successful-hlb">Successful</div>
                             <div id="date-time-hlb">00 000 0000 00:00PM</div>
-                            <div><input class="input-edit-hlb" type="text" value="256-00-06615-7 CURRENT ACCOUNT" autocomplete="off"></div>
+                            <div><input class="input-edit-hlb" type="text" value="256-00-06615-7 CURRENT ACCOUNT"
+                                    autocomplete="off"></div>
                             <div id="name-bank-hlb">MAYBANK BERHAD</div>
-                            <div><input class="input-edit-hlb" type="search" list="list-type" placeholder="Current/Savings" onmousedown="value = '';" autocomplete="off">
-                            <datalist id="list-type">
-                                <option value="Current/Savings"></option>
-                                <option value="E-wallet"></option>
-                            </datalist></div>
-                            <div><input class="input-edit-hlb" type="text" value="514682476694" autocomplete="off"></div>
-                            <div><input class="input-edit-hlb" type="text" value="MANSUR GOOD SERVICES" autocomplete="off"></div>
+                            <div><input class="input-edit-hlb" type="search" list="list-type"
+                                    placeholder="Current/Savings" onmousedown="value = '';" autocomplete="off">
+                                <datalist id="list-type">
+                                    <option value="Current/Savings"></option>
+                                    <option value="E-wallet"></option>
+                                </datalist>
+                            </div>
+                            <div><input class="input-edit-hlb" type="text" value="514682476694" autocomplete="off">
+                            </div>
+                            <div><input class="input-edit-hlb" type="text" value="MANSUR GOOD SERVICES"
+                                    autocomplete="off"></div>
                             <div>DuitNow to Account (previously Instant Transfer)</div>
                             <div class="bg-color-hlb"><span id="amount-hlb-1">000</span>.00</div>
                             <div class="bg-color-hlb"><span id="amount-hlb-2">000</span>.00</div>
-                               
+
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- >>>>>>>>>> BAR CHANGE PBB <<<<<<<<<< -->
+            <div id="to-pbb" class="input-cimb">
+                <div id="hidePBB" class="input-in">
+                    <div class="input-one">
+                        <i class="ph ph-calendar"></i>
+                        <input class="tableInput" id="pbb-input-datetime" autocomplete="off" placeholder="Date & Time"
+                            maxlength="24">
+                        <button id="nowhlb" class="now-button" onclick="pbbnowdatetime()">NOW</button>
+                    </div>
+                    <div class="inputAndButton">
+                        <div class="ref-amount-gap">
+
+                            <div class="input-thre">
+                                <i class="ph ph-currency-circle-dollar"></i>
+                                <input class="tableInput" id="pbb-input-amount" placeholder="Amount" maxlength="7"
+                                    autocomplete="off" oninput={handleInput(event)} />
+                            </div>
+                            <div class="input-two">
+                                <i class="ph ph-identification-card"></i>
+                                <input class="tableInput" type="text" autocomplete="off" id="pbb-input-namebank"
+                                    placeholder="C-Name Bank" onkeyup="onkeypbb()">
+                            </div>
+                            <div class="list-box" id="list-box-pbb"></div>
+                        </div>
+                        <div class="input-four">
+                            <button id="creatcimb" class="creat" onclick="onpbb()">Creat</button>
+                            <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- /* >>>>>>>>>> RESIT PBB <<<<<<<<<< */ -->
+
+                <div class="content-pbb">
+                    <div class="content-pbb-in">
+                        <div class="navbar-pbb">
+                            <img src="picture/pbb.png" alt="">
+
+                        </div>
+                        <hr>
+                        <div class="content-text">
+                            <div class="left-text">
+
+                                <div class="margin-top-pbb">
+                                    <span class="font-bold">DuitNow Transfer to Other Account
+                                </div>
+                                <div>
+                                    <span class="font-bold">Reference Number: </span><input class="pbb-edit-input" value="616277" type="text">
+                                </div>
+                                <div>
+                                    <span class="font-bold">DuitNow Reference No: </span><input class="pbb-edit-input" value="20250307PBBEMYKL010ORB00542443" type="text">
+                                </div>
+                                <div>
+                                    <span class="font-bold">DuitNow Status Code: </span><input class="pbb-edit-input" value="U000" type="text">
+                                </div>
+                                <div>
+                                    <span class="font-bold">Transaction Status: </span><span>Successful</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Transaction Date/Time: </span><span id="date-time-pbb">00-00-0000 00:00:00</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">From Account: </span><input class="pbb-edit-input" value="XXXXXX4303 ( Savings )" type="text">
+                                </div>
+                                <div>
+                                    <span class="font-bold">Amount: </span>RM <span id="amount-pbb">0,000</span>.00
+                                </div>
+
+
+                                <div class="margin-font">
+                                    <span class="font-bold">Beneficiary Bank: </span><span id="name-bank-pbb">Maybank Berhad</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Beneficiary Account: </span><input class="pbb-edit-input" value="514682476694" type="text">
+                                </div>
+                                <div>
+                                    <span class="font-bold">Beneficiary Account Type: </span><span>Savings/Current Account</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Beneficiary Name: </span><input class="pbb-edit-input" value="Mansur Good Services" type="text">
+                                </div>
+                                <div>
+                                    <span class="font-bold">Recipient Reference: </span><span>Payment</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Other Payment Details: </span><span>Payment</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">DuitNow Transfer Service Charge: </span><span>RM 0.00</span>
+                                </div>
+                                <div>
+                                    <span class="font-bold">Total Charges: </span><span>RM 0.00</span>
+                                </div>
+
+                                <div class="tag-logo">
+                                    <img src="picture/TagLine.png" alt="">
+                                    <img src="picture/PBB-logo.png" alt="">
+                                </div>
+
+                                <div>Note:</div>
+                                <div>This is a computer generated receipt and does not require a signature.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-    <script src="index.js"></script>
+        <script src="index.js"></script>
 </body>
 
 </html>
