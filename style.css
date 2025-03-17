@@ -538,14 +538,18 @@ h3 {
 }
 
 .content-left div, .content-right div {
-   padding-top: 16px !important;
+   padding-top: 16px;
    padding-left: 20px;
    height: 30px;
    font-family: "Noto Sans", Roboto, "Open Sans", sans-serif !important;
 }
 
+.content-left div {
+    letter-spacing: -1px;
+}
+
 .successful-hlb{
-    color: #1ca344;
+    color: #1CA344;
     font-weight: bold;
 }
 
@@ -567,7 +571,7 @@ h3 {
     padding-inline: 0;
     border: 0;
     background: transparent;
-    font-family: 'Helvetica', Arial, sans-serif;
+    font-family: "Noto Sans", Roboto, "Open Sans", sans-serif !important;
     font-size: 16px;
     color: #444444;
 }
