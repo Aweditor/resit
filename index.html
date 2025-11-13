@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>AW Editor</title>
+    <title>Resit Demo – AW Editor</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="Png Game/LogoAW.ico" >
+    <link rel="icon" type="image/x-icon" href="Png Game/LogoAW.ico">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
+
     <!-- /* >>>>>>>>>> NAVBAR <<<<<<<<<< */ -->
     <div class="all-Content">
         <div class="contentNav">
@@ -23,8 +24,16 @@
             <a class="pngGame" href="Png Game/index.html" target="_blank">PNG GAME</a>
         </div>
 
+        
+
         <!-- /* >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< */ -->
         <div class="three-content">
+    <div
+        style="background:#ffecec; color:#d8000c; padding:15px; border:1px solid #d8000c; margin-bottom:20px; font-size:16px; text-align:center;">
+         ⚠️ <strong>Amaran:</strong> Halaman ini adalah <em>simulasi resit</em>.
+        Ia <strong>bukan</strong> resit sebenar dan hanya untuk tujuan demo/ujian.
+    </div>
+
             <div id="to-cimb" class="input-cimb">
                 <div>
                     <div id="hideCIMB" class="input-in">
@@ -80,7 +89,7 @@
                                         <div>
                                             <div class="pay">
                                                 <p>Account Number</p>
-                                                <input type="text" class="change-accBank" value="162059164522">
+                                                <input type="text" class="change-accBank" value="123456789010">
                                             </div>
                                         </div>
                                     </div>
@@ -89,7 +98,7 @@
                                             <div class="pay1">
                                                 <p>Recipient Name</p>
                                                 <input type="text" class="change-nameBank"
-                                                    value="KURUMOORTHU BIN AJI SALIM">
+                                                    value="JOHN DOE SUZUKI HONDA">
                                             </div>
                                         </div>
                                     </div>
@@ -178,9 +187,9 @@
                                     <div id="mbb-datetime-edit" class="content-mbb-margin">00 000 0000 00:00:00</div>
                                     <div class="amount-acc-margin">RM<span
                                             id="mbb-amount-edit">0,000</span>.<span>00</span>
-                                        <div><input class="edit-acc-mbb" type="text" value="514682476694"></div>
-                                        <input class="edit-acc-namebank" type="text" value="152219134636">
-                                        <input class="edit-acc-namebank" type="text" value="MOHD SUHAIRI BIN MOH">
+                                        <div><input class="edit-acc-mbb" type="text" value="123456789010"></div>
+                                        <input class="edit-acc-namebank" type="text" value="123456789010">
+                                        <input class="edit-acc-namebank" type="text" value="JOHN DOE SUZUKI HONDA">
                                         <div class="content-mbb-margin">Payment</div>
                                     </div>
                                 </div>
@@ -220,7 +229,7 @@
                         <div class="content-in-rhb">
                             <div class="to-acc">
                                 <div class="font-size-color-font">To</div>
-                                <input class="acc-rhb2" type="text" value="MOHD FURTITURE SDN.BHD.8605533655">
+                                <input class="acc-rhb2" type="text" value="JOHN DOE SUZUKI HONDA.123456789010">
                             </div>
                             <div class="color-rhb">
                                 <div class="flex-rhb">
@@ -305,9 +314,9 @@
                                     <option value="E-wallet"></option>
                                 </datalist>
                             </div>
-                            <div><input class="input-edit-hlb" type="text" value="514682476694" autocomplete="off">
+                            <div><input class="input-edit-hlb" type="text" value="123456789010" autocomplete="off">
                             </div>
-                            <div><input class="input-edit-hlb" type="text" value="MANSUR GOOD SERVICES"
+                            <div><input class="input-edit-hlb" type="text" value="JOHN DOE SUZUKI HONDA"
                                     autocomplete="off"></div>
                             <div>DuitNow to Account (previously Instant Transfer)</div>
                             <div class="bg-color-hlb"><span id="amount-hlb-1">000</span>.00</div>
@@ -366,22 +375,27 @@
                                     <span class="font-bold">DuitNow Transfer to Other Account
                                 </div>
                                 <div>
-                                    <span class="font-bold">Reference Number: </span><input class="pbb-edit-input" value="616277" type="text">
+                                    <span class="font-bold">Reference Number: </span><input class="pbb-edit-input"
+                                        value="616277" type="text">
                                 </div>
                                 <div>
-                                    <span class="font-bold">DuitNow Reference No: </span><input class="pbb-edit-input" value="20250307PBBEMYKL010ORB00542443" type="text">
+                                    <span class="font-bold">DuitNow Reference No: </span><input class="pbb-edit-input"
+                                        value="20250307PBBEMYKL010ORB00542443" type="text">
                                 </div>
                                 <div>
-                                    <span class="font-bold">DuitNow Status Code: </span><input class="pbb-edit-input" value="U000" type="text">
+                                    <span class="font-bold">DuitNow Status Code: </span><input class="pbb-edit-input"
+                                        value="U000" type="text">
                                 </div>
                                 <div>
                                     <span class="font-bold">Transaction Status: </span><span>Successful</span>
                                 </div>
                                 <div>
-                                    <span class="font-bold">Transaction Date/Time: </span><span id="date-time-pbb">00-00-0000 00:00:00</span>
+                                    <span class="font-bold">Transaction Date/Time: </span><span
+                                        id="date-time-pbb">00-00-0000 00:00:00</span>
                                 </div>
                                 <div>
-                                    <span class="font-bold">From Account: </span><input class="pbb-edit-input" value="XXXXXX4303 ( Savings )" type="text">
+                                    <span class="font-bold">From Account: </span><input class="pbb-edit-input"
+                                        value="XXXXXX4303 ( Savings )" type="text">
                                 </div>
                                 <div>
                                     <span class="font-bold">Amount: </span>RM <span id="amount-pbb">0,000</span>.00
@@ -389,16 +403,20 @@
 
 
                                 <div class="margin-font">
-                                    <span class="font-bold">Beneficiary Bank: </span><span id="name-bank-pbb">Maybank Berhad</span>
+                                    <span class="font-bold">Beneficiary Bank: </span><span id="name-bank-pbb">Maybank
+                                        Berhad</span>
                                 </div>
                                 <div>
-                                    <span class="font-bold">Beneficiary Account: </span><input class="pbb-edit-input" value="514682476694" type="text">
+                                    <span class="font-bold">Beneficiary Account: </span><input class="pbb-edit-input"
+                                        value="123456789010" type="text">
                                 </div>
                                 <div>
-                                    <span class="font-bold">Beneficiary Account Type: </span><span>Savings/Current Account</span>
+                                    <span class="font-bold">Beneficiary Account Type: </span><span>Savings/Current
+                                        Account</span>
                                 </div>
                                 <div>
-                                    <span class="font-bold">Beneficiary Name: </span><input class="pbb-edit-input" value="Mansur Good Services" type="text">
+                                    <span class="font-bold">Beneficiary Name: </span><input class="pbb-edit-input"
+                                        value="John Doe Suzuki Honda" type="text">
                                 </div>
                                 <div>
                                     <span class="font-bold">Recipient Reference: </span><span>Payment</span>

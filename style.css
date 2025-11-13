@@ -584,7 +584,6 @@ h3 {
 
 /* RESIT PBB */
 .content-pbb {
-    font-family: Montserrat, sans-serif;
     background-color: rgb(255, 255, 255);
     box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
@@ -633,7 +632,6 @@ hr {
     padding-inline: 0;
     border: 0;
     background: transparent;
-    font-family: Montserrat, sans-serif;
     font-size: 13px;
     color: black; 
 }
@@ -646,5 +644,87 @@ hr {
     background-color: chartreuse;
 }
 
+
+
+/* RESIT BIMB */
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.content-bimb {
+    font-family: "Montserrat", sans-serif;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+    padding: 50px;
+    justify-content: center;
+    display: flex;
+}
+
+.content-bimb-in {
+
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 13px;
+    box-shadow: 0px 0px 1cqh 2px rgb(202, 202, 202);
+}
+
+.bimb-content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.text-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.padd-b {
+    padding-bottom: 30px;
+}
+
+.view {
+    padding-right: 10px;
+    color: rgba(127, 0, 0, 0.657);
+}
+
+.space {
+    padding-bottom: 18px;
+}
+
+.bimb-content,div,span {
+    color: rgb(53, 53, 53);
+}
+
+.money-bimb span {
+    font-weight: bold;
+
+}
+
+.f-blod {
+    font-weight: bold; 
+}
+
+.succ-bimb {
+    color: #3edc85d4;
+    border: 1px solid #3edc85d4;
+    border-radius: 20px;
+    padding: 2px 15px;
+    margin-left: 10px;
+    font-size: 14px;
+}
 
 
