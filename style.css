@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 * {
     text-decoration: none;
     margin: 0px;
@@ -34,7 +35,7 @@ body {
     background-color: rgb(166, 166, 166);
 }
 
-.button-bank{
+.button-bank {
     display: flex;
     flex-direction: column;
 }
@@ -54,6 +55,7 @@ body {
     align-items: center;
     text-align: center;
 }
+
 a:hover {
     background: rgb(255, 111, 0);
     color: white;
@@ -87,6 +89,7 @@ a:hover {
     justify-content: space-between;
     box-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
+
 .tableInput {
     width: 100%;
     height: 25px;
@@ -96,17 +99,19 @@ a:hover {
     outline: none;
     background: transparent;
 }
+
 .inputAndButton {
     display: flex;
     gap: 10px;
 }
 
-.ref-amount-gap{
+.ref-amount-gap {
     display: grid;
-    gap: 10px ;
+    gap: 10px;
 }
 
-.input-two , .input-thre {
+.input-two,
+.input-thre {
     background-color: #ffff;
     padding: 5px;
     border-radius: 3px;
@@ -115,7 +120,10 @@ a:hover {
     box-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
-.ph-calendar, .ph-arrow-square-right, .ph-currency-circle-dollar, .ph-identification-card {
+.ph-calendar,
+.ph-arrow-square-right,
+.ph-currency-circle-dollar,
+.ph-identification-card {
     font-size: 25px;
     color: blue;
     border-right: 2px solid rgba(0, 0, 0, 0.286);
@@ -128,7 +136,8 @@ a:hover {
     box-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
-.creat, .hide5s {
+.creat,
+.hide5s {
     height: 50%;
     width: 100%;
     background: transparent;
@@ -142,6 +151,7 @@ a:hover {
 .creat {
     color: chartreuse;
 }
+
 .hide5s {
     color: red;
 }
@@ -152,6 +162,7 @@ a:hover {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
 .hide5s:hover {
     background-color: red;
     color: white;
@@ -176,7 +187,8 @@ a:hover {
     color: black;
 }
 
-@media print, (max-width: 825px) {
+@media print,
+(max-width: 825px) {
     .contentNav {
         display: none;
     }
@@ -186,7 +198,8 @@ a:hover {
     }
 }
 
-@media print, (min-width: 825px) {
+@media print,
+(min-width: 825px) {
 
 
     .three-content {
@@ -200,17 +213,17 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px  ;
+    gap: 30px;
 }
 
-.input-cimb{
+.input-cimb {
     width: 90%;
     align-items: center;
     padding: 10px 0;
 }
 
 /* >>>>>>>>>> RESIT CIMB <<<<<<<<<<>>>>>>>>>> RESIT CIMB <<<<<<<<<<>>>>>>>>>> RESIT CIMB <<<<<<<<<< */
-.shadow{
+.shadow {
     box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
@@ -232,26 +245,32 @@ header {
 nav {
     margin: 0 0 0 17px;
 }
+
 nav ul {
     display: flex;
     list-style-type: none;
     align-items: center;
 }
+
 nav ul li {
     margin: 2px;
 }
+
 nav ul strong {
     color: #7db680;
     padding: 0px 3px 0px 12px;
 }
+
 .dTime {
     padding: 0 18px 0 0;
 }
+
 .my-logo {
     width: 25px;
     margin-right: auto;
     margin: 0;
 }
+
 .color {
     background-color: #f3f3f3;
     height: auto;
@@ -259,28 +278,35 @@ nav ul strong {
     font-family: "Open Sans", sans-serif;
     box-shadow: black;
 }
+
 .content {
     padding-right: 10px;
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
+
 .inside-content {
     margin-left: 20px;
 }
+
 .padding-bottom-10 {
     padding-top: 10px;
 }
+
 .pay-one {
     padding-top: 10px;
     font-size: 20px;
     font-weight: 730;
     letter-spacing: -1.50px;
 }
+
 .pay1 {
     padding-top: 7px;
 }
-.change-nameBank, .change-accBank {
+
+.change-nameBank,
+.change-accBank {
     letter-spacing: -.30px;
     border: 0;
     background: transparent;
@@ -291,25 +317,32 @@ nav ul strong {
     padding-inline: 0;
     width: 350px;
 }
-.change-accBank:hover, .change-nameBank:hover{
+
+.change-accBank:hover,
+.change-nameBank:hover {
     background-color: chartreuse;
     border-radius: 5px;
 }
+
 .content-one {
     text-align: right;
     padding: 10px 8px 10px 0;
     margin: 7px 10px 7px 0;
 }
+
 h3 {
     font-size: 20px;
     font-weight: 700;
 }
+
 .margin-top {
     margin: 10px 0 7px;
 }
+
 .bankCharge {
     font-size: 11.5px;
 }
+
 .money-one {
     font-size: 12px !important;
     line-height: 1.50em;
@@ -317,15 +350,18 @@ h3 {
     font-weight: 680;
     margin-left: 2px;
 }
+
 .money {
     font-size: 20px;
 }
+
 .caj-one {
     font-size: 10px !important;
     line-height: 2em;
     vertical-align: top;
 }
-.caj{
+
+.caj {
     font-size: 14px;
 }
 
@@ -362,7 +398,7 @@ h3 {
     display: flex;
     width: 100%;
     font-size: 17px;
-    font-family: Arial,sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .content-mbb-50 {
@@ -378,7 +414,8 @@ h3 {
     margin: 31px 0;
 }
 
-.edit-acc-mbb, .edit-acc-namebank {
+.edit-acc-mbb,
+.edit-acc-namebank {
     margin: 31px 0;
     padding-block: 0;
     padding-inline: 0;
@@ -388,11 +425,13 @@ h3 {
     font-weight: bold;
     width: 100%;
 }
+
 .edit-acc-namebank {
     margin: 0 0 5px 0;
 }
 
-.edit-acc-mbb:hover, .edit-acc-namebank:hover {
+.edit-acc-mbb:hover,
+.edit-acc-namebank:hover {
     background-color: chartreuse;
     border-radius: 5px;
 }
@@ -469,12 +508,13 @@ h3 {
     padding-inline: 0;
     width: 100%;
 }
-.acc-rhb2:hover{
+
+.acc-rhb2:hover {
     background-color: chartreuse;
     border-radius: 5px;
 }
 
-.color-rhb{
+.color-rhb {
     margin: 1px 0 0 0;
     background-color: #ECEFF4;
 }
@@ -521,7 +561,7 @@ h3 {
 
 .content-hlb {
     background-color: #fff;
-    padding-top: 10px; 
+    padding-top: 10px;
     width: auto;
     box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
@@ -531,24 +571,26 @@ h3 {
     width: 100%;
     color: #444444;
 }
+
 .content-left {
     width: 100%;
     max-width: 350px;
     font-weight: bold;
 }
 
-.content-left div, .content-right div {
-   padding-top: 16px;
-   padding-left: 20px;
-   height: 30px;
-   font-family: "Noto Sans", Roboto, "Open Sans", sans-serif !important;
+.content-left div,
+.content-right div {
+    padding-top: 16px;
+    padding-left: 20px;
+    height: 30px;
+    font-family: "Noto Sans", Roboto, "Open Sans", sans-serif !important;
 }
 
 .content-left div {
     letter-spacing: -1px;
 }
 
-.successful-hlb{
+.successful-hlb {
     color: #1CA344;
     font-weight: bold;
 }
@@ -576,7 +618,7 @@ h3 {
     color: #444444;
 }
 
-.input-edit-hlb:hover{
+.input-edit-hlb:hover {
     background-color: chartreuse;
 }
 
@@ -633,7 +675,7 @@ hr {
     border: 0;
     background: transparent;
     font-size: 13px;
-    color: black; 
+    color: black;
 }
 
 .pbb-edit-input::placeholder {
@@ -642,4 +684,190 @@ hr {
 
 .pbb-edit-input:hover {
     background-color: chartreuse;
+}
+
+
+.resitRyt,
+.resitGX {
+    background-color: white;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+}
+
+.ryt-container,
+.resitGX {
+    text-align: center;
+}
+
+.ryt-container,
+.successful-ryt,
+.rm-ryt,
+.time-ryt {
+    font-family: 'Inter', sans-serif;
+}
+
+.ryt-container img {
+    width: 80px;
+}
+
+
+.successful-ryt {
+    padding-top: 18px;
+
+    font-size: 19px;
+    color: rgb(1, 184, 120);
+
+}
+
+.rm-ryt {
+    padding-top: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.time-ryt {
+    padding-top: 5px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+
+.bg-gx {
+    background-color: rgb(12, 1, 33);
+    width: 500px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.GX-container {
+    width: 400px;
+    padding-bottom: 30px;
+    border-bottom: solid 3px #b3afc23a;
+}
+
+.GX-container img {
+    width: 90px;
+}
+
+.GX-container .time-gx {
+    color: #d0d0d08c;
+}
+
+.time-gx {
+    font-size: 14.5px;
+}
+
+
+.content-gx {
+        font-family: 'Inter', sans-serif;
+}
+
+.successful-gx {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    padding-top: 24px;
+    padding-bottom: 13px;
+}
+
+.dot {
+    display: inline-block;
+    width: 4.5px;
+    height: 4.5px;
+    background-color: #b3afc28c;
+    border-radius: 50%;
+    margin: 0 6px;
+    vertical-align: middle;
+}
+
+.color-gx {
+        color: #d0d0d08c;
+}
+
+.duitnow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.logo-duitnow {
+    width: 65px;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.name-info {
+    text-align: left;
+}
+
+.acc-bank {
+    font-size: 17px;
+    padding-top: 5px;
+    color: rgb(175, 175, 175) !important;
+}
+
+.name,
+.acc-bank {
+    color: white;
+}
+
+.star {
+    margin-left: 18px;
+}
+
+.star svg {
+    width: 17px;
+    height: 17px;
+}
+
+.amount-gx {
+    text-align: left;
+}
+
+.blur-text {
+    font-size: 14px;
+}
+
+
+.blur-text {
+    color: #d0d0d08c;
+}
+
+.text-solid {
+    color: white;
+    font-size: 40px;
+    margin-top: 8px;
+}
+
+.blur-text1, .text-solid1 {
+    color: rgba(255, 255, 255, 0.833);
+}
+
+.blur-text1, .blur-text2 {
+    font-size: 15px;
+    color: #d0d0d08c;
+    padding-top: 18px;
+}
+
+.text-solid1 {
+    font-size: 20px;
+    padding-top: 5px;
+    
+}
+
+.blur-text2 {
+    padding-top: 35px;
 }
