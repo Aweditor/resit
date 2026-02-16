@@ -356,3 +356,115 @@ function selectInputPBB(listPBB) {
     pbbinputbox.value = listPBB.innerHTML
     listBoxpbb.innerHTML = '';
 }
+
+
+let rytTime = document.getElementById('ryt-time')
+let rytinputdatetime = document.getElementById('ryt-input-datetime')
+
+let rytAmount = document.getElementById('amount-ryt')
+let rytinputamount = document.getElementById('ryt-input-amount')
+
+
+function onryt() {
+    rytTime.innerHTML = rytinputdatetime.value;
+    rytAmount.innerHTML = rytinputamount.value;
+}
+
+function rytnowdatetime() {
+    let fulldate = new Date();
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let dd = fulldate.getDate();
+    let mmm = months[fulldate.getMonth()];
+    let yyyy = fulldate.getFullYear();
+    let hou = fulldate.getHours();
+    let min = fulldate.getMinutes();
+    let ampm = hou >= 12 ? 'PM' : 'AM';
+
+    hou = hou % 12;
+    hou = hou ? hou : 12;
+    min = min < 10 ? '0' + min : min;
+
+
+    if (dd.toString().length == 1) {
+        dd = '0' + dd;
+    }
+
+    if (mmm.toString().length == 1) {
+        mmm = '0' + mmm;
+    }
+
+    if (hou.toString().length == 1) {
+        hou = '' + hou;
+    }
+
+    if (min.toString().length == 1) {
+        min = '0' + min;
+    }
+
+    document.getElementById('ryt-input-datetime').value = dd + " " + mmm + " " + yyyy + ", " + hou + ":" + min + " " + ampm;
+}
+
+
+let gxTime = document.getElementById('gx-time')
+let gxinputdatetime = document.getElementById('gx-input-datetime')
+
+let gxAmount = document.getElementById('amount-gx')
+let gxinputamount = document.getElementById('gx-input-amount')
+
+
+function ongx() {
+    gxTime.innerHTML = gxinputdatetime.value;
+        gxAmount.innerHTML = gxinputamount.value;
+
+}
+
+function gxnowdatetime() {
+ 
+    let fulldate = new Date();
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let dd = fulldate.getDate();
+    let mmm = months[fulldate.getMonth()];
+    let yyyy = fulldate.getFullYear();
+    let hou = fulldate.getHours();
+    let min = fulldate.getMinutes();
+    let ampm = hou >= 12 ? 'PM' : 'AM';
+
+    hou = hou % 12;
+    hou = hou ? hou : 12;
+    min = min < 10 ? '0' + min : min;
+
+
+    if (dd.toString().length == 1) {
+        dd = '0' + dd;
+    }
+
+    if (mmm.toString().length == 1) {
+        mmm = '0' + mmm;
+    }
+
+    if (hou.toString().length == 1) {
+        hou = '' + hou;
+    }
+
+    if (min.toString().length == 1) {
+        min = '0' + min;
+    }
+
+    document.getElementById('gx-input-datetime').value = dd + " " + mmm + " " + yyyy + ", " + hou + ":" + min + " " + ampm;
+}
+    
+
+function generateTransactionID() {
+    const bytes = new Uint8Array(5); 
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes)
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+}
+
+const trxDisplay = document.getElementById("trxID");
+const button = document.getElementById("createBtn");
+
+button.addEventListener("click", function() {
+    trxDisplay.innerText = generateTransactionID();
+});
