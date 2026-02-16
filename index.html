@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="Png Game/LogoAW.ico">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,19 +22,21 @@
                 <a href="#to-rhb">RHB</a>
                 <a href="#to-hlb">HLB</a>
                 <a href="#to-pbb">PBB</a>
+                <a href="#to-ryt">RYT</a>
+                <a href="#to-gx">GX</a>
             </div>
             <a class="pngGame" href="Png Game/index.html" target="_blank">PNG GAME</a>
         </div>
 
-        
+
 
         <!-- /* >>>>>>>>>> BAR CHANGE CIMB <<<<<<<<<< */ -->
         <div class="three-content">
-    <div
-        style="background:#ffecec; color:#d8000c; padding:15px; border:1px solid #d8000c; margin-bottom:20px; font-size:16px; text-align:center;">
-         ⚠️ <strong>Amaran:</strong> Halaman ini adalah <em>simulasi resit</em>.
-        Ia <strong>bukan</strong> resit sebenar dan hanya untuk tujuan demo/ujian.
-    </div>
+            <div
+                style="background:#ffecec; color:#d8000c; padding:15px; border:1px solid #d8000c; margin-bottom:20px; font-size:16px; text-align:center;">
+                ⚠️ <strong>Amaran:</strong> Halaman ini adalah <em>simulasi resit</em>.
+                Ia <strong>bukan</strong> resit sebenar dan hanya untuk tujuan demo/ujian.
+            </div>
 
             <div id="to-cimb" class="input-cimb">
                 <div>
@@ -444,8 +448,117 @@
                 </div>
             </div>
 
+            <!-- >>>>>>>>>> BAR CHANGE RYT <<<<<<<<<< -->
+            <div id="to-ryt" class="input-cimb">
+                <div id="hidePBB" class="input-in">
+                    <div class="input-one">
+                        <i class="ph ph-calendar"></i>
+                        <input class="tableInput" id="ryt-input-datetime" autocomplete="off" placeholder="Date & Time"
+                            maxlength="24">
+                        <button id="nowhlb" class="now-button" onclick="rytnowdatetime()">NOW</button>
+                    </div>
+                    <div class="inputAndButton">
+                        <div class="ref-amount-gap">
+
+                            <div class="input-thre">
+                                <i class="ph ph-currency-circle-dollar"></i>
+                                <input class="tableInput" id="ryt-input-amount" placeholder="Amount" maxlength="7"
+                                    autocomplete="off" oninput={handleInput(event)} />
+                            </div>
+                            <div class="input-two">
+                                <i class="ph "></i>
+                                <input class="tableInput" type="button" placeholder="C-Name Bank" onkeyup="onkeypbb()">
+                            </div>
+                        </div>
+                        <div class="input-four">
+                            <button id="creatcimb" class="creat" onclick="onryt()">Creat</button>
+                            <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resitRyt">
+                    <div class="ryt-container">
+                        <img src="picture/RYT.png" alt="">
+                        <div class="successful-ryt">Successful</div>
+                        <div class="rm-ryt"><span>RM </span> <span id="amount-ryt">1,202</span><span>.00</span></div>
+                        <div id="ryt-time" class="time-ryt">13 Feb 2026, 1:47 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- >>>>>>>>>> BAR CHANGE GX <<<<<<<<<< -->
+            <div id="to-gx" class="input-cimb">
+                <div id="hidePBB" class="input-in">
+                    <div class="input-one">
+                        <i class="ph ph-calendar"></i>
+                        <input class="tableInput" id="gx-input-datetime" autocomplete="off" placeholder="Date & Time"
+                            maxlength="24">
+                        <button id="nowhlb" class="now-button" onclick="gxnowdatetime()">NOW</button>
+                    </div>
+                    <div class="inputAndButton">
+                        <div class="ref-amount-gap">
+
+                            <div class="input-thre">
+                                <i class="ph ph-currency-circle-dollar"></i>
+                                <input class="tableInput" id="gx-input-amount" placeholder="Amount" maxlength="7"
+                                    autocomplete="off" oninput={handleInput(event)} />
+                            </div>
+                            <div class="input-two">
+                                <i class="ph "></i>
+                                <input class="tableInput" type="button" placeholder="C-Name Bank" onkeyup="onkeypbb()">
+                            </div>
+                        </div>
+                        <div class="input-four">
+                            <button id="createBtn" class="creat" onclick="ongx()">Creat</button>
+                            <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resitGX">
+                    <div class="bg-gx">
+                        <div class="GX-container">
+                            <img src="picture/gx.png" alt="">
+                            <div class="successful-gx">Transfer successful</div>
+                            <span id="gx-time" class="time-gx"><span>15 Feb 2026, 10:33 PM</span></span><span class="color-gx"><span class="dot"></span><span>Ref</span> <span id="trxID" class="gx-ref">c8a18410b3</span></span>
+                        </div>
+                        <div class="container-gx">
+                            <div class="content-gx">
+                                <div class="duitnow">
+                                    <img class="logo-duitnow" src="picture/duit.png" alt="">
+                                    <div class="name-info">
+                                        <div class="name">JOHN DOE SUZUKI HONDA</div>
+                                        <div class="acc-bank">123456789000</div>
+                                    </div>
+                                    <div class="star">
+                                        <svg viewBox="0 0 100 100">
+                                            <polygon points="50,5 60,32 95,35 70,55 78,88 50,68 22,88 30,55 5,35 40,32"
+                                                fill="#444" stroke="#444" stroke-width="8" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+
+
+                                <div class="amount-gx">
+                                    <div class="blur-text">Amount</div>
+                                    <div class="text-solid currency-gx"><span>RM</span><span id="amount-gx">100</span><span>.00</span></div>
+
+                                    <div class="blur-text1">Bank name</div>
+                                    <div class="text-solid1">Maybank</div>
+
+                                    <div class="blur-text2">Transfer type</div>
+                                    <div class="text-solid1">Fund transfer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <script src="index.js"></script>
+
+    </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
