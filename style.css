@@ -377,6 +377,17 @@ h3 {
     box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
+.change-type {
+    background-color: rgb(69, 69, 69);
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    height: 40px;
+    border-radius: 8px;
+    font-size: 23px;
+    font-weight: bold;
+    cursor: pointer;
+    color: chartreuse;
+}
+
 .content-mbb {
     background-color: white;
     margin: auto;
@@ -871,3 +882,4 @@ hr {
 .blur-text2 {
     padding-top: 35px;
 }
+
