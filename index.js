@@ -468,3 +468,27 @@ const button = document.getElementById("createBtn");
 button.addEventListener("click", function() {
     trxDisplay.innerText = generateTransactionID();
 });
+
+
+
+
+const types = [
+    "DuitNow Transfer",
+    "Open 3rd Party Transfer",
+    "Favourite 3rd Party Transfer"
+];
+
+let currentIndex = 0;
+
+const typeText = document.getElementById("typeText");
+const buttonT = document.getElementById("changeTypeBtn");
+
+buttonT.addEventListener("click", function() {
+    currentIndex++;
+    if (currentIndex >= types.length) {
+        currentIndex = 0;
+    }
+    typeText.innerText = types[currentIndex];
+});
+
+
