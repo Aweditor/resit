@@ -475,7 +475,7 @@ button.addEventListener("click", function() {
 const types = [
     "DuitNow Transfer",
     "Open 3rd Party Transfer",
-    "Favourite 3rd Party Transfer"
+    "Favourite 3rd Party Transfer",
     "OPEN Interbank"
 ];
 
