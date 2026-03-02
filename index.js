@@ -477,6 +477,7 @@ const types = [
     "Open 3rd Party Transfer",
     "Favourite 3rd Party Transfer",
     "OPEN Interbank",
+    "3rd Party Transfer",
     "Favourite DuitNow Transfer"
 ];
 
