@@ -476,7 +476,8 @@ const types = [
     "DuitNow Transfer",
     "Open 3rd Party Transfer",
     "Favourite 3rd Party Transfer",
-    "OPEN Interbank"
+    "OPEN Interbank",
+    "Favourite DuitNow Transfer"
 ];
 
 let currentIndex = 0;
