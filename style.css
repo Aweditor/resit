@@ -103,11 +103,14 @@ a:hover {
 .inputAndButton {
     display: flex;
     gap: 10px;
+    justify-content: space-between;
 }
 
 .ref-amount-gap {
-    display: grid;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+gap: 10px;
+
 }
 
 .input-two,
@@ -442,7 +445,9 @@ h3 {
 }
 
 .edit-acc-mbb:hover,
-.edit-acc-namebank:hover {
+.edit-acc-namebank:hover,
+.reference-number:hover,
+.detail-text:hover {
     background-color: chartreuse;
     border-radius: 5px;
 }
@@ -459,85 +464,179 @@ h3 {
 
 
 /* >>>>>>>>>>> RHB <<<<<<<<<<< >>>>>>>>>>> RHB <<<<<<<<<<< >>>>>>>>>>> RHB <<<<<<<<<<< */
-.header-rhb {
-    background-color: #1cff82;
-    font-size: 15px;
+
+
+
+.rhb-page {
+    max-width: 540px;
+    margin: auto;
+    padding: 22px 16px 45px;
+}
+
+.status-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.status-icon img {
+    width: 48px;
+    display: block;
+}
+
+.status-info h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: rgb(67 158 63);
+    line-height: 1;
+}
+
+.status-info p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #33363d;
+    font-weight: 400;
+}
+
+.receipt-card,
+.detail-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-bottom: 10px;
+}
+
+.receipt-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.label {
+    font-size: 13px;
+    color: #2c333c;
+    margin-bottom: 7px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+.amount {
+    font-size: 30px;
+    font-weight: 700;
+    color: #03182b;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.amount span {
+    font-weight: 700;
+}
+
+.receipt-right img {
+    width: 55px;
+    display: block;
+}
+
+.reference-box {
+    margin-top: 28px;
+}
+
+.reference-title {
+    font-size: 16px;
+    color: #344054;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.reference-number {
     width: 100%;
-    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+    padding-block: 0;
+    padding-inline: 0;
+    border: 0;
+    font-size: 17px;
+    color: #262b35;
+    letter-spacing: -0.4px;
+    font-weight: 0;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 90px;
+    row-gap: 30px;
+}
+
+.detail-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-item {
+    margin-bottom: 23px;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #101828;
+    margin-bottom: 2px;
+        min-width: 100px;
+}
+
+.detail-list-bank{
+        font-size: 16px;
+    color: #000103;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+
+.detail-text {
+    font-size: 16px;
+    color: #000103;
+    font-weight: 400;
+    margin-bottom: 3px;
+        width: 100%;
+    padding-block: 0;
+    padding-inline: 0;
+    border: 0;
+}
+
+.content-in-rhb {
+    min-width: 600px;
+    max-width: 600px;
+    margin: auto;
+    font-family: Lato, -apple-system, system-ui, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .content-rhb {
-    background-color: white;
-    padding: 15px;
+    background: #edf9ff;
+    padding: 30px 15px 50px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
-.to-acc {
-    background-color: #ECEFF4;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    padding: 20px;
-}
-
-.font-size-color-font {
-    margin: 2px 0 3px 0;
-    font-size: 13.50px;
-    color: rgba(108, 108, 108, 0.705);
-}
-
-.font-size-color-font-1 {
-    margin-top: 26px;
-    font-size: 13.50px;
-    color: rgba(108, 108, 108, 0.705);
-}
-
-.font-size-color-font-2 {
-    padding: 5px 0 30px 0;
-    font-size: 16px;
-    color: rgba(46, 46, 46, 0.994);
-}
-
-.font-size-color-font-3 {
-    margin-top: 16px;
-    margin-bottom: 5px;
-    font-size: 13.50px;
-    color: rgba(108, 108, 108, 0.705);
-}
-
-.font-size-color-font-4 {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: rgba(46, 46, 46, 0.994);
-}
-
-.acc-rhb2 {
-    margin: 0px 0 0 0;
-    font-size: 16px;
-    color: rgba(46, 46, 46, 0.994);
-    border: 0;
-    background: transparent;
-    padding-block: 0;
-    padding-inline: 0;
+.header-rhb {
+    background: #1cff82;
     width: 100%;
 }
 
-.acc-rhb2:hover {
-    background-color: chartreuse;
+.input-in-rhb {
+        background-color: #134eff;
+    max-width: 350px;
+    padding: 10px;
+    gap: 10px;
+    margin: 10px 10px 10px 0;
     border-radius: 5px;
-}
-
-.color-rhb {
-    margin: 1px 0 0 0;
-    background-color: #ECEFF4;
-}
-
-.flex-rhb {
-    width: 600px;
     display: flex;
-    margin: 0 20px;
-}
-
-.rhb-one {
-    width: 50%;
+    flex-direction: column;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
 }
 
 .list-box ul {
@@ -551,7 +650,6 @@ h3 {
     font-size: 13px;
     color: black;
     border: 1px solid rgba(0, 0, 0, 0.167);
-
 }
 
 .list-box ul li {
@@ -564,6 +662,52 @@ h3 {
 
 .list-box ul li:hover {
     background-color: rgba(0, 0, 0, 0.142);
+}
+
+.toggle-btn{
+    margin-left:auto;
+    width:55px;
+    height:28px;
+    border:none;
+    border-radius:12px;
+    background:#d63031;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+    border-radius: 9999px;
+    font-size: 12px;
+        box-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+.toggle-btn.active{
+    background:#00b894;
+}
+
+.prefix-input{
+    width:0;
+    opacity:0;
+    padding:0;
+    margin-right:0;
+
+    border:none;
+    outline:none;
+
+    text-align:center;
+    font-weight:bold;
+
+    transition:.35s ease;
+
+    overflow:hidden;
+}
+
+.prefix-input.show{
+    width:45px;
+    opacity:1;
+    padding:5px;
+    margin-right:6px;
+    border:1px solid #ccc;
+    border-radius:4px;
 }
 
 
@@ -776,7 +920,7 @@ hr {
 
 
 .content-gx {
-        font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .successful-gx {
@@ -799,7 +943,7 @@ hr {
 }
 
 .color-gx {
-        color: #d0d0d08c;
+    color: #d0d0d08c;
 }
 
 .duitnow {
@@ -863,11 +1007,13 @@ hr {
     margin-top: 8px;
 }
 
-.blur-text1, .text-solid1 {
+.blur-text1,
+.text-solid1 {
     color: rgba(255, 255, 255, 0.833);
 }
 
-.blur-text1, .blur-text2 {
+.blur-text1,
+.blur-text2 {
     font-size: 15px;
     color: #d0d0d08c;
     padding-top: 18px;
@@ -876,10 +1022,9 @@ hr {
 .text-solid1 {
     font-size: 20px;
     padding-top: 5px;
-    
+
 }
 
 .blur-text2 {
     padding-top: 35px;
 }
-
