@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="Png Game/LogoAW.ico">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -207,7 +207,23 @@
             <!-- >>>>>>>>>> BAR CHANGE RHB <<<<<<<<<< -->
 
             <div class="input-cimb" id="to-rhb">
-                <div id="hideRHB" class="input-in">
+                <div id="hideRHB" class="input-in-rhb">
+
+                    <div class="input-one">
+                        <i class="ph ph-calendar"></i>
+                        <input class="tableInput" id="rhb-input-datetime" autocomplete="off" placeholder="Date & Time"
+                            maxlength="20">
+                        <button id="nowmbb" class="now-button" onclick="rhbnowdatetime()">NOW</button>
+                    </div>
+
+                    <div class="input-two">
+                        <i class="ph ph-arrow-square-right"></i>
+                        <input class="tableInput" id="rhb-input-reff" autocomplete="off" placeholder="Number Reff"
+                            maxlength="17">
+                        <input id="reff-prefix" class="prefix-input" type="text" maxlength="3" placeholder="000">
+                        <button type="button" id="toggleReff" class="toggle-btn">OFF</button>
+                    </div>
+
                     <div class="inputAndButton">
                         <div class="ref-amount-gap">
                             <div class="input-thre">
@@ -215,42 +231,398 @@
                                 <input class="tableInput" id="rhb-input-amount" autocomplete="off" placeholder="Amount"
                                     maxlength="7" oninput={handleInput(event)} />
                             </div>
+
                             <div class="input-two">
                                 <i class="ph ph-identification-card"></i>
-                                <input class="tableInput" type="text" autocomplete="off" id="rhb-input-ref"
+                                <input class="tableInput" type="text" autocomplete="off" id="rhb-input-list-bank"
                                     placeholder="C-Name Bank" onkeyup="onkey()">
                             </div>
                             <div class="list-box" id="list-box-rhb"></div>
                         </div>
+
                         <div class="input-four">
                             <button onclick="onrhb()" class="creat" type="button">CREAT</button>
                             <button id="hide5s" class="hide5s" onclick="hideRHB()">Hide5s</button>
                         </div>
                     </div>
+                    <button class="change-type" id="changeTypeBtnRhb">Change Type</button>
                 </div>
+
                 <!-- /* >>>>>>>>>> RESIT RHB <<<<<<<<<< */ -->
                 <div class="header-rhb">
                     <div class="content-rhb">
                         <div class="content-in-rhb">
-                            <div class="to-acc">
-                                <div class="font-size-color-font">To</div>
-                                <input class="acc-rhb2" type="text" value="JOHN DOE SUZUKI HONDA.123456789010">
+                            <div class="status-section">
+
+                                <div class="status-icon">
+                                    <img src="picture/centang RHB.png" alt="">
+                                </div>
+
+                                <div class="status-info">
+                                    <h1>Successful</h1>
+                                    <p id="rhb-datetime">00:0000 00000, 00 0000 0000000</p>
+                                </div>
+
                             </div>
-                            <div class="color-rhb">
-                                <div class="flex-rhb">
-                                    <div class="rhb-one">
-                                        <div class="font-size-color-font-1">Bank</div>
-                                        <div class="font-size-color-font-2" id="name-bank">Maybank</div>
-                                        <div class="font-size-color-font-3">Amount</div>
-                                        <div class="font-size-color-font-4">MYR <span
-                                                id="amount-rhb">0,000</span><span>.00
+
+                            <div class="receipt-card">
+                                <div class="receipt-top">
+                                    <div class="receipt-left">
+                                        <div class="label">Amount</div>
+                                        <div class="amount"> MYR <span id="amount-rhb">1,500</span>.00</div>
+                                    </div>
+                                    <div class="receipt-right"><img src="picture/duit RHB.png" alt=""></div>
+                                </div>
+
+                                <div class="reference-box">
+                                    <div class="reference-title">Reference ID</div>
+                                    <input id="reff-rhb" class="reference-number" type="text" value="17839156814363710">
+                                </div>
+                            </div>
+
+                            <div class="detail-card">
+                                <div class="detail-grid">
+
+                                    <!-- LEFT -->
+
+                                    <div class="detail-column">
+                                        <div class="detail-item">
+                                            <div class="detail-title">
+                                                From
+                                            </div>
+                                            <input id="typeTextrhb" class="detail-text" type="text" value="RHB MaxSave">
+                                            <input class="detail-text" type="text" value="11114600339110">
+                                        </div>
+
+                                        <div class="detail-item">
+                                            <div class="detail-title">Bank</div>
+                                            <div class="detail-list-bank" id="name-bank">MayBank</div>
                                         </div>
                                     </div>
-                                    <div class="rhb-one">
-                                        <div class="font-size-color-font-1">Payment Type</div>
-                                        <div class="font-size-color-font-2">Fund Transfer</div>
-                                        <div class="font-size-color-font-3">Recipient Reference</div>
-                                        <div class="font-size-color-font-4">Payment</div>
+
+                                    <!-- RIGHT -->
+
+                                    <div class="detail-column">
+                                        <div class="detail-item">
+                                            <div class="detail-title">
+                                                To
+                                            </div>
+                                            <input class="detail-text" type="text" value="JOHN DOE SUZUKI HONDA">
+                                            <input class="detail-text" type="text" value="012345678978">
+                                        </div>
+
+                                        <div class="detail-item">
+                                            <div class="detail-title">Transfer Type</div>
+                                            <div class="detail-list-bank">Fund Transfer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- >>>>>>>>>> BAR CHANGE HLB <<<<<<<<<< -->
+                <div id="to-hlb" class="input-cimb">
+                    <div id="hideHLB" class="input-in">
+                        <div class="input-one">
+                            <i class="ph ph-calendar"></i>
+                            <input class="tableInput" id="hlb-input-datetime" autocomplete="off"
+                                placeholder="Date & Time" maxlength="24">
+                            <button class="now-button" onclick="hlbnowdatetime()">NOW</button>
+                        </div>
+                        <div class="inputAndButton">
+                            <div class="ref-amount-gap">
+
+                                <div class="input-thre">
+                                    <i class="ph ph-currency-circle-dollar"></i>
+                                    <input class="tableInput" id="hlb-input-amount" placeholder="Amount" maxlength="7"
+                                        autocomplete="off" oninput={handleInput(event)} />
+                                </div>
+                                <div class="input-two">
+                                    <i class="ph ph-identification-card"></i>
+                                    <input class="tableInput" type="text" autocomplete="off" id="hlb-input-namebank"
+                                        placeholder="C-Name Bank" onkeyup="onkeyhlb()">
+                                </div>
+                                <div class="list-box" id="list-box-hlb"></div>
+                            </div>
+                            <div class="input-four">
+                                <button id="creatcimb" class="creat" onclick="onhlb()">Creat</button>
+                                <button id="hide5s" class="hide5s" onclick="hideHLB()">Hide5s</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /* >>>>>>>>>> RESIT HLB <<<<<<<<<< */ -->
+
+                    <div class="content-hlb">
+                        <div class="content-hlb-in">
+                            <div class="content-left">
+                                <div>Transaction Status</div>
+                                <div>Transaction Date, Time</div>
+                                <div>From</div>
+                                <div>Recipient Bank / Wallet Name</div>
+                                <div>Account Type</div>
+                                <div>Account Number</div>
+                                <div>Recipient Name</div>
+                                <div>Transfer Type</div>
+                                <div class="bg-color-hlb">Amount (MYR)</div>
+                                <div class="bg-color-hlb">Total Amount (MYR)</div>
+                            </div>
+                            <div class="content-right">
+                                <div class="successful-hlb">Successful</div>
+                                <div id="date-time-hlb">00 000 0000 00:00PM</div>
+                                <div><input class="input-edit-hlb" type="text" value="256-00-06615-7 CURRENT ACCOUNT"
+                                        autocomplete="off"></div>
+                                <div id="name-bank-hlb">MAYBANK BERHAD</div>
+                                <div><input class="input-edit-hlb" type="search" list="list-type"
+                                        placeholder="Current/Savings" onmousedown="value = '';" autocomplete="off">
+                                    <datalist id="list-type">
+                                        <option value="Current/Savings"></option>
+                                        <option value="E-wallet"></option>
+                                    </datalist>
+                                </div>
+                                <div><input class="input-edit-hlb" type="text" value="123456789010" autocomplete="off">
+                                </div>
+                                <div><input class="input-edit-hlb" type="text" value="JOHN DOE SUZUKI HONDA"
+                                        autocomplete="off"></div>
+                                <div>DuitNow to Account (previously Instant Transfer)</div>
+                                <div class="bg-color-hlb"><span id="amount-hlb-1">000</span>.00</div>
+                                <div class="bg-color-hlb"><span id="amount-hlb-2">000</span>.00</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- >>>>>>>>>> BAR CHANGE PBB <<<<<<<<<< -->
+                <div id="to-pbb" class="input-cimb">
+                    <div id="hidePBB" class="input-in">
+                        <div class="input-one">
+                            <i class="ph ph-calendar"></i>
+                            <input class="tableInput" id="pbb-input-datetime" autocomplete="off"
+                                placeholder="Date & Time" maxlength="24">
+                            <button id="nowhlb" class="now-button" onclick="pbbnowdatetime()">NOW</button>
+                        </div>
+                        <div class="inputAndButton">
+                            <div class="ref-amount-gap">
+
+                                <div class="input-thre">
+                                    <i class="ph ph-currency-circle-dollar"></i>
+                                    <input class="tableInput" id="pbb-input-amount" placeholder="Amount" maxlength="7"
+                                        autocomplete="off" oninput={handleInput(event)} />
+                                </div>
+                                <div class="input-two">
+                                    <i class="ph ph-identification-card"></i>
+                                    <input class="tableInput" type="text" autocomplete="off" id="pbb-input-namebank"
+                                        placeholder="C-Name Bank" onkeyup="onkeypbb()">
+                                </div>
+                                <div class="list-box" id="list-box-pbb"></div>
+                            </div>
+                            <div class="input-four">
+                                <button id="creatcimb" class="creat" onclick="onpbb()">Creat</button>
+                                <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- /* >>>>>>>>>> RESIT PBB <<<<<<<<<< */ -->
+
+                    <div class="content-pbb">
+                        <div class="content-pbb-in">
+                            <div class="navbar-pbb">
+                                <img src="picture/pbb.png" alt="">
+
+                            </div>
+                            <hr>
+                            <div class="content-text">
+                                <div class="left-text">
+
+                                    <div class="margin-top-pbb">
+                                        <span class="font-bold">DuitNow Transfer to Other Account
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Reference Number: </span><input class="pbb-edit-input"
+                                            value="616277" type="text">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">DuitNow Reference No: </span><input
+                                            class="pbb-edit-input" value="20250307PBBEMYKL010ORB00542443" type="text">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">DuitNow Status Code: </span><input
+                                            class="pbb-edit-input" value="U000" type="text">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Transaction Status: </span><span>Successful</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Transaction Date/Time: </span><span
+                                            id="date-time-pbb">00-00-0000 00:00:00</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">From Account: </span><input class="pbb-edit-input"
+                                            value="XXXXXX4303 ( Savings )" type="text">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Amount: </span>RM <span id="amount-pbb">0,000</span>.00
+                                    </div>
+
+
+                                    <div class="margin-font">
+                                        <span class="font-bold">Beneficiary Bank: </span><span
+                                            id="name-bank-pbb">Maybank
+                                            Berhad</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Beneficiary Account: </span><input
+                                            class="pbb-edit-input" value="123456789010" type="text">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Beneficiary Account Type: </span><span>Savings/Current
+                                            Account</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Beneficiary Name: </span><input class="pbb-edit-input"
+                                            value="John Doe Suzuki Honda" type="text">
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Recipient Reference: </span><span>Payment</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Other Payment Details: </span><span>Payment</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">DuitNow Transfer Service Charge: </span><span>RM
+                                            0.00</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-bold">Total Charges: </span><span>RM 0.00</span>
+                                    </div>
+
+                                    <div class="tag-logo">
+                                        <img src="picture/TagLine.png" alt="">
+                                        <img src="picture/PBB-logo.png" alt="">
+                                    </div>
+
+                                    <div>Note:</div>
+                                    <div>This is a computer generated receipt and does not require a signature.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- >>>>>>>>>> BAR CHANGE RYT <<<<<<<<<< -->
+                <div id="to-ryt" class="input-cimb">
+                    <div id="hidePBB" class="input-in">
+                        <div class="input-one">
+                            <i class="ph ph-calendar"></i>
+                            <input class="tableInput" id="ryt-input-datetime" autocomplete="off"
+                                placeholder="Date & Time" maxlength="24">
+                            <button id="nowhlb" class="now-button" onclick="rytnowdatetime()">NOW</button>
+                        </div>
+                        <div class="inputAndButton">
+                            <div class="ref-amount-gap">
+
+                                <div class="input-thre">
+                                    <i class="ph ph-currency-circle-dollar"></i>
+                                    <input class="tableInput" id="ryt-input-amount" placeholder="Amount" maxlength="7"
+                                        autocomplete="off" oninput={handleInput(event)} />
+                                </div>
+                                <div class="input-two">
+                                    <i class="ph "></i>
+                                    <input class="tableInput" type="button" placeholder="C-Name Bank"
+                                        onkeyup="onkeypbb()">
+                                </div>
+                            </div>
+                            <div class="input-four">
+                                <button id="creatcimb" class="creat" onclick="onryt()">Creat</button>
+                                <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resitRyt">
+                        <div class="ryt-container">
+                            <img src="picture/RYT.png" alt="">
+                            <div class="successful-ryt">Successful</div>
+                            <div class="rm-ryt"><span>RM </span> <span id="amount-ryt">1,202</span><span>.00</span>
+                            </div>
+                            <div id="ryt-time" class="time-ryt">13 Feb 2026, 1:47 PM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- >>>>>>>>>> BAR CHANGE GX <<<<<<<<<< -->
+                <div id="to-gx" class="input-cimb">
+                    <div id="hidePBB" class="input-in">
+                        <div class="input-one">
+                            <i class="ph ph-calendar"></i>
+                            <input class="tableInput" id="gx-input-datetime" autocomplete="off"
+                                placeholder="Date & Time" maxlength="24">
+                            <button id="nowhlb" class="now-button" onclick="gxnowdatetime()">NOW</button>
+                        </div>
+                        <div class="inputAndButton">
+                            <div class="ref-amount-gap">
+
+                                <div class="input-thre">
+                                    <i class="ph ph-currency-circle-dollar"></i>
+                                    <input class="tableInput" id="gx-input-amount" placeholder="Amount" maxlength="7"
+                                        autocomplete="off" oninput={handleInput(event)} />
+                                </div>
+                                <div class="input-two">
+                                    <i class="ph "></i>
+                                    <input class="tableInput" type="button" placeholder="C-Name Bank"
+                                        onkeyup="onkeypbb()">
+                                </div>
+                            </div>
+                            <div class="input-four">
+                                <button id="createBtn" class="creat" onclick="ongx()">Creat</button>
+                                <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resitGX">
+                        <div class="bg-gx">
+                            <div class="GX-container">
+                                <img src="picture/gx.png" alt="">
+                                <div class="successful-gx">Transfer successful</div>
+                                <span id="gx-time" class="time-gx"><span>15 Feb 2026, 10:33 PM</span></span><span
+                                    class="color-gx"><span class="dot"></span><span>Ref</span> <span id="trxID"
+                                        class="gx-ref">c8a18410b3</span></span>
+                            </div>
+                            <div class="container-gx">
+                                <div class="content-gx">
+                                    <div class="duitnow">
+                                        <img class="logo-duitnow" src="picture/duit.png" alt="">
+                                        <div class="name-info">
+                                            <div class="name">JOHN DOE SUZUKI HONDA</div>
+                                            <div class="acc-bank">123456789000</div>
+                                        </div>
+                                        <div class="star">
+                                            <svg viewBox="0 0 100 100">
+                                                <polygon
+                                                    points="50,5 60,32 95,35 70,55 78,88 50,68 22,88 30,55 5,35 40,32"
+                                                    fill="#444" stroke="#444" stroke-width="8"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="amount-gx">
+                                        <div class="blur-text">Amount</div>
+                                        <div class="text-solid currency-gx"><span>RM</span><span
+                                                id="amount-gx">100</span><span>.00</span></div>
+
+                                        <div class="blur-text1">Bank name</div>
+                                        <div class="text-solid1">Maybank</div>
+
+                                        <div class="blur-text2">Transfer type</div>
+                                        <div class="text-solid1">Fund transfer</div>
                                     </div>
                                 </div>
                             </div>
@@ -259,309 +631,8 @@
                 </div>
             </div>
 
-            <!-- >>>>>>>>>> BAR CHANGE HLB <<<<<<<<<< -->
-            <div id="to-hlb" class="input-cimb">
-                <div id="hideHLB" class="input-in">
-                    <div class="input-one">
-                        <i class="ph ph-calendar"></i>
-                        <input class="tableInput" id="hlb-input-datetime" autocomplete="off" placeholder="Date & Time"
-                            maxlength="24">
-                        <button class="now-button" onclick="hlbnowdatetime()">NOW</button>
-                    </div>
-                    <div class="inputAndButton">
-                        <div class="ref-amount-gap">
-
-                            <div class="input-thre">
-                                <i class="ph ph-currency-circle-dollar"></i>
-                                <input class="tableInput" id="hlb-input-amount" placeholder="Amount" maxlength="7"
-                                    autocomplete="off" oninput={handleInput(event)} />
-                            </div>
-                            <div class="input-two">
-                                <i class="ph ph-identification-card"></i>
-                                <input class="tableInput" type="text" autocomplete="off" id="hlb-input-namebank"
-                                    placeholder="C-Name Bank" onkeyup="onkeyhlb()">
-                            </div>
-                            <div class="list-box" id="list-box-hlb"></div>
-                        </div>
-                        <div class="input-four">
-                            <button id="creatcimb" class="creat" onclick="onhlb()">Creat</button>
-                            <button id="hide5s" class="hide5s" onclick="hideHLB()">Hide5s</button>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /* >>>>>>>>>> RESIT HLB <<<<<<<<<< */ -->
-
-                <div class="content-hlb">
-                    <div class="content-hlb-in">
-                        <div class="content-left">
-                            <div>Transaction Status</div>
-                            <div>Transaction Date, Time</div>
-                            <div>From</div>
-                            <div>Recipient Bank / Wallet Name</div>
-                            <div>Account Type</div>
-                            <div>Account Number</div>
-                            <div>Recipient Name</div>
-                            <div>Transfer Type</div>
-                            <div class="bg-color-hlb">Amount (MYR)</div>
-                            <div class="bg-color-hlb">Total Amount (MYR)</div>
-                        </div>
-                        <div class="content-right">
-                            <div class="successful-hlb">Successful</div>
-                            <div id="date-time-hlb">00 000 0000 00:00PM</div>
-                            <div><input class="input-edit-hlb" type="text" value="256-00-06615-7 CURRENT ACCOUNT"
-                                    autocomplete="off"></div>
-                            <div id="name-bank-hlb">MAYBANK BERHAD</div>
-                            <div><input class="input-edit-hlb" type="search" list="list-type"
-                                    placeholder="Current/Savings" onmousedown="value = '';" autocomplete="off">
-                                <datalist id="list-type">
-                                    <option value="Current/Savings"></option>
-                                    <option value="E-wallet"></option>
-                                </datalist>
-                            </div>
-                            <div><input class="input-edit-hlb" type="text" value="123456789010" autocomplete="off">
-                            </div>
-                            <div><input class="input-edit-hlb" type="text" value="JOHN DOE SUZUKI HONDA"
-                                    autocomplete="off"></div>
-                            <div>DuitNow to Account (previously Instant Transfer)</div>
-                            <div class="bg-color-hlb"><span id="amount-hlb-1">000</span>.00</div>
-                            <div class="bg-color-hlb"><span id="amount-hlb-2">000</span>.00</div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- >>>>>>>>>> BAR CHANGE PBB <<<<<<<<<< -->
-            <div id="to-pbb" class="input-cimb">
-                <div id="hidePBB" class="input-in">
-                    <div class="input-one">
-                        <i class="ph ph-calendar"></i>
-                        <input class="tableInput" id="pbb-input-datetime" autocomplete="off" placeholder="Date & Time"
-                            maxlength="24">
-                        <button id="nowhlb" class="now-button" onclick="pbbnowdatetime()">NOW</button>
-                    </div>
-                    <div class="inputAndButton">
-                        <div class="ref-amount-gap">
-
-                            <div class="input-thre">
-                                <i class="ph ph-currency-circle-dollar"></i>
-                                <input class="tableInput" id="pbb-input-amount" placeholder="Amount" maxlength="7"
-                                    autocomplete="off" oninput={handleInput(event)} />
-                            </div>
-                            <div class="input-two">
-                                <i class="ph ph-identification-card"></i>
-                                <input class="tableInput" type="text" autocomplete="off" id="pbb-input-namebank"
-                                    placeholder="C-Name Bank" onkeyup="onkeypbb()">
-                            </div>
-                            <div class="list-box" id="list-box-pbb"></div>
-                        </div>
-                        <div class="input-four">
-                            <button id="creatcimb" class="creat" onclick="onpbb()">Creat</button>
-                            <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- /* >>>>>>>>>> RESIT PBB <<<<<<<<<< */ -->
-
-                <div class="content-pbb">
-                    <div class="content-pbb-in">
-                        <div class="navbar-pbb">
-                            <img src="picture/pbb.png" alt="">
-
-                        </div>
-                        <hr>
-                        <div class="content-text">
-                            <div class="left-text">
-
-                                <div class="margin-top-pbb">
-                                    <span class="font-bold">DuitNow Transfer to Other Account
-                                </div>
-                                <div>
-                                    <span class="font-bold">Reference Number: </span><input class="pbb-edit-input"
-                                        value="616277" type="text">
-                                </div>
-                                <div>
-                                    <span class="font-bold">DuitNow Reference No: </span><input class="pbb-edit-input"
-                                        value="20250307PBBEMYKL010ORB00542443" type="text">
-                                </div>
-                                <div>
-                                    <span class="font-bold">DuitNow Status Code: </span><input class="pbb-edit-input"
-                                        value="U000" type="text">
-                                </div>
-                                <div>
-                                    <span class="font-bold">Transaction Status: </span><span>Successful</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">Transaction Date/Time: </span><span
-                                        id="date-time-pbb">00-00-0000 00:00:00</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">From Account: </span><input class="pbb-edit-input"
-                                        value="XXXXXX4303 ( Savings )" type="text">
-                                </div>
-                                <div>
-                                    <span class="font-bold">Amount: </span>RM <span id="amount-pbb">0,000</span>.00
-                                </div>
-
-
-                                <div class="margin-font">
-                                    <span class="font-bold">Beneficiary Bank: </span><span id="name-bank-pbb">Maybank
-                                        Berhad</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">Beneficiary Account: </span><input class="pbb-edit-input"
-                                        value="123456789010" type="text">
-                                </div>
-                                <div>
-                                    <span class="font-bold">Beneficiary Account Type: </span><span>Savings/Current
-                                        Account</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">Beneficiary Name: </span><input class="pbb-edit-input"
-                                        value="John Doe Suzuki Honda" type="text">
-                                </div>
-                                <div>
-                                    <span class="font-bold">Recipient Reference: </span><span>Payment</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">Other Payment Details: </span><span>Payment</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">DuitNow Transfer Service Charge: </span><span>RM 0.00</span>
-                                </div>
-                                <div>
-                                    <span class="font-bold">Total Charges: </span><span>RM 0.00</span>
-                                </div>
-
-                                <div class="tag-logo">
-                                    <img src="picture/TagLine.png" alt="">
-                                    <img src="picture/PBB-logo.png" alt="">
-                                </div>
-
-                                <div>Note:</div>
-                                <div>This is a computer generated receipt and does not require a signature.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- >>>>>>>>>> BAR CHANGE RYT <<<<<<<<<< -->
-            <div id="to-ryt" class="input-cimb">
-                <div id="hidePBB" class="input-in">
-                    <div class="input-one">
-                        <i class="ph ph-calendar"></i>
-                        <input class="tableInput" id="ryt-input-datetime" autocomplete="off" placeholder="Date & Time"
-                            maxlength="24">
-                        <button id="nowhlb" class="now-button" onclick="rytnowdatetime()">NOW</button>
-                    </div>
-                    <div class="inputAndButton">
-                        <div class="ref-amount-gap">
-
-                            <div class="input-thre">
-                                <i class="ph ph-currency-circle-dollar"></i>
-                                <input class="tableInput" id="ryt-input-amount" placeholder="Amount" maxlength="7"
-                                    autocomplete="off" oninput={handleInput(event)} />
-                            </div>
-                            <div class="input-two">
-                                <i class="ph "></i>
-                                <input class="tableInput" type="button" placeholder="C-Name Bank" onkeyup="onkeypbb()">
-                            </div>
-                        </div>
-                        <div class="input-four">
-                            <button id="creatcimb" class="creat" onclick="onryt()">Creat</button>
-                            <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resitRyt">
-                    <div class="ryt-container">
-                        <img src="picture/RYT.png" alt="">
-                        <div class="successful-ryt">Successful</div>
-                        <div class="rm-ryt"><span>RM </span> <span id="amount-ryt">1,202</span><span>.00</span></div>
-                        <div id="ryt-time" class="time-ryt">13 Feb 2026, 1:47 PM</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- >>>>>>>>>> BAR CHANGE GX <<<<<<<<<< -->
-            <div id="to-gx" class="input-cimb">
-                <div id="hidePBB" class="input-in">
-                    <div class="input-one">
-                        <i class="ph ph-calendar"></i>
-                        <input class="tableInput" id="gx-input-datetime" autocomplete="off" placeholder="Date & Time"
-                            maxlength="24">
-                        <button id="nowhlb" class="now-button" onclick="gxnowdatetime()">NOW</button>
-                    </div>
-                    <div class="inputAndButton">
-                        <div class="ref-amount-gap">
-
-                            <div class="input-thre">
-                                <i class="ph ph-currency-circle-dollar"></i>
-                                <input class="tableInput" id="gx-input-amount" placeholder="Amount" maxlength="7"
-                                    autocomplete="off" oninput={handleInput(event)} />
-                            </div>
-                            <div class="input-two">
-                                <i class="ph "></i>
-                                <input class="tableInput" type="button" placeholder="C-Name Bank" onkeyup="onkeypbb()">
-                            </div>
-                        </div>
-                        <div class="input-four">
-                            <button id="createBtn" class="creat" onclick="ongx()">Creat</button>
-                            <button id="hide5s" class="hide5s" onclick="hidepbb()">Hide5s</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resitGX">
-                    <div class="bg-gx">
-                        <div class="GX-container">
-                            <img src="picture/gx.png" alt="">
-                            <div class="successful-gx">Transfer successful</div>
-                            <span id="gx-time" class="time-gx"><span>15 Feb 2026, 10:33 PM</span></span><span class="color-gx"><span class="dot"></span><span>Ref</span> <span id="trxID" class="gx-ref">c8a18410b3</span></span>
-                        </div>
-                        <div class="container-gx">
-                            <div class="content-gx">
-                                <div class="duitnow">
-                                    <img class="logo-duitnow" src="picture/duit.png" alt="">
-                                    <div class="name-info">
-                                        <div class="name">JOHN DOE SUZUKI HONDA</div>
-                                        <div class="acc-bank">123456789000</div>
-                                    </div>
-                                    <div class="star">
-                                        <svg viewBox="0 0 100 100">
-                                            <polygon points="50,5 60,32 95,35 70,55 78,88 50,68 22,88 30,55 5,35 40,32"
-                                                fill="#444" stroke="#444" stroke-width="8" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                </div>
-
-
-                                <div class="amount-gx">
-                                    <div class="blur-text">Amount</div>
-                                    <div class="text-solid currency-gx"><span>RM</span><span id="amount-gx">100</span><span>.00</span></div>
-
-                                    <div class="blur-text1">Bank name</div>
-                                    <div class="text-solid1">Maybank</div>
-
-                                    <div class="blur-text2">Transfer type</div>
-                                    <div class="text-solid1">Fund transfer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
-    </div>
-    <script src="index.js"></script>
+        <script src="index.js"></script>
 </body>
 
 </html>
-
-
