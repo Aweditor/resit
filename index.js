@@ -128,26 +128,58 @@ function hideMBB() {
     }, 5000)
 }
 
-
 // >>>>>>>>>> RHB CHANGE <<<<<<<<<<
+let rhbdatetime = document.getElementById('rhb-datetime')
+let inputrhbdatetime = document.getElementById('rhb-input-datetime')
+
+
 let amountrhb = document.getElementById('amount-rhb')
 let inputrhb = document.getElementById('rhb-input-amount')
 
-let inputnamebank = document.getElementById('rhb-input-ref')
+let reffrhb = document.getElementById('reff-rhb');
+let inputreffrhb = document.getElementById('rhb-input-reff');
+
 let namebank = document.getElementById('name-bank')
+let inputnamebank = document.getElementById('rhb-input-list-bank')
 
 function onrhb() {
     amountrhb.innerHTML = inputrhb.value;
     namebank.innerHTML = inputnamebank.value;
+    reffrhb.value = inputreffrhb.value;
+    rhbdatetime.innerHTML = inputrhbdatetime.value;
+
+
+    const reff = document.getElementById("reff-rhb");
+
+    if (autoRandom) {
+
+        let p = prefix.value.trim();
+
+        if (p.length != 3) {
+
+            alert("Masukkan 3 Digit Angka depan Reff.");
+
+            return;
+
+        }
+
+        reff.value = generateReference(p);
+
+    } else {
+
+        reff.value = document.getElementById("rhb-input-reff").value;
+
+    }
+
 }
 
 let Keywords = [
-    'AGRO Bank', 'Alliance Bank Malaysia Berhad', 'AMBank', 'Affin Bank Berhad', 'Bank Islam Malaysia Berhad', 'Bank Kerjasama Rakyat Malaysia', 'Bank Muamalat Malaysia Berhad', 'Bank Simpanan Nasional', 'BigPay', 'Boost Bank', 'Boost eWallet', 'CIMB', 'Citibank Berhad', 'GXBank', 'Hong Leong Bank Berhad', 'Maybank', 'HSBC Bank', 'MBSB Bank Berhad', 'OCBC Bank Malaysia Berhad', 'Public Bank', 'Shopee', 'Touch N Go Digital', 'United Overseas Bank Berhad',
+    'AGRO Bank', 'Alliance Bank Malaysia Berhad', 'RHB', 'AMBank', 'Affin Bank Berhad', 'Bank Islam Malaysia Berhad', 'Bank Kerjasama Rakyat Malaysia', 'Bank Muamalat Malaysia Berhad', 'Bank Simpanan Nasional', 'BigPay', 'Boost Bank', 'Boost eWallet', 'CIMB', 'Citibank Berhad', 'GXBank', 'Hong Leong Bank Berhad', 'Maybank', 'HSBC Bank', 'MBSB Bank Berhad', 'OCBC Bank Malaysia Berhad', 'Public Bank', 'Shopee', 'Touch N Go Digital', 'United Overseas Bank Berhad',
 ];
 const listBoxRhb = document.getElementById('list-box-rhb');
-const Rhbinputbox = document.getElementById('rhb-input-ref');
+const Rhbinputbox = document.getElementById('rhb-input-list-bank');
 function onkey() {
-    const Rhbinputbox = document.getElementById('rhb-input-ref');
+    const Rhbinputbox = document.getElementById('rhb-input-list-bank');
     let resultRHB = [];
     let input = Rhbinputbox.value;
     if (input.length) {
@@ -180,6 +212,137 @@ function hideRHB() {
         document.getElementById('hideRHB').style.display = "";
     }, 5000)
 }
+
+function rhbnowdatetime() {
+    let fulldate = new Date();
+
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    let months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ];
+
+    let day = days[fulldate.getDay()];
+    let dd = fulldate.getDate();
+    let mmm = months[fulldate.getMonth()];
+    let yyyy = fulldate.getFullYear();
+    let hou = fulldate.getHours();
+    let min = fulldate.getMinutes();
+    let ampm = hou >= 12 ? "PM" : "AM";
+
+    hou = hou % 12;
+    hou = hou ? hou : 12;
+
+    if (hou < 10) hou = "0" + hou;
+    if (min < 10) min = "0" + min;
+    if (dd < 10) dd = "0" + dd;
+
+    document.getElementById("rhb-input-datetime").value = `${hou}:${min}${ampm} ${day}, ${dd} ${mmm} ${yyyy} MYT`;
+}
+
+
+const types = [
+    "DuitNow Transfer",
+    "Open 3rd Party Transfer",
+    "Favourite 3rd Party Transfer",
+    "OPEN Interbank",
+    "3rd Party Transfer",
+    "Favourite DuitNow Transfer"
+];
+
+let currentIndex = 0;
+
+const typeText = document.getElementById("typeText");
+const buttonT = document.getElementById("changeTypeBtn");
+
+buttonT.addEventListener("click", function () {
+    currentIndex++;
+    if (currentIndex >= types.length) {
+        currentIndex = 0;
+    }
+    typeText.innerText = types[currentIndex];
+});
+
+
+
+let autoRandomReff = false;
+
+const toggleBtn = document.getElementById("toggleReff");
+
+toggleBtn.onclick = function () {
+    autoRandomReff = !autoRandomReff;
+
+    this.textContent = autoRandomReff ? "ON" : "OFF";
+    this.classList.toggle("active", autoRandomReff);
+};
+
+function generateRandom17Digit() {
+    let number = "";
+
+    // digit pertama 1-9
+    number += Math.floor(Math.random() * 9) + 1;
+
+    // 16 digit berikutnya
+    for (let i = 1; i < 17; i++) {
+        number += Math.floor(Math.random() * 10);
+    }
+
+    return number;
+}
+
+
+
+let autoRandom = false;
+
+const toggle = document.getElementById("toggleReff");
+const prefix = document.getElementById("reff-prefix");
+
+toggle.onclick = function () {
+
+    autoRandom = !autoRandom;
+
+    if (autoRandom) {
+
+        this.innerHTML = "ON";
+        this.classList.add("active");
+
+        prefix.classList.add("show");
+
+    } else {
+
+        this.innerHTML = "OFF";
+        this.classList.remove("active");
+
+        prefix.classList.remove("show");
+        prefix.value = "";
+
+    }
+
+};
+
+function generateReference(prefix) {
+
+    let result = prefix;
+
+    for (let i = 0; i < 14; i++) {
+
+        result += Math.floor(Math.random() * 10);
+
+    }
+
+    return result;
+
+}
+
 
 // >>>>>>>>>> HLB CHANGE <<<<<<<<<<
 let datetimehlb = document.getElementById('date-time-hlb');
@@ -273,6 +436,40 @@ function selectInputHlb(listHLB) {
     hlbinputbox.value = listHLB.innerHTML
     listBoxhlb.innerHTML = '';
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const typesrhb = [
+        "RHB Smart Account",
+        "Savings Account-i",
+        "RHB MaxSave",
+    ];
+
+    let currentIndex = 0;
+
+    const typeTextrhb1 = document.getElementById("typeTextrhb");
+    const buttonTrhb = document.getElementById("changeTypeBtnRhb");
+
+    buttonTrhb.addEventListener("click", function () {
+        currentIndex++;
+        if (currentIndex >= typesrhb.length) {
+            currentIndex = 0;
+        }
+
+        typeTextrhb1.value = typesrhb[currentIndex];
+    });
+
+});
+
+
+
+
+
+
+
+
+
 
 // >>>>>>>>>> PBB CHANGE <<<<<<<<<<
 let datetimepbb = document.getElementById('date-time-pbb');
@@ -414,12 +611,12 @@ let gxinputamount = document.getElementById('gx-input-amount')
 
 function ongx() {
     gxTime.innerHTML = gxinputdatetime.value;
-        gxAmount.innerHTML = gxinputamount.value;
+    gxAmount.innerHTML = gxinputamount.value;
 
 }
 
 function gxnowdatetime() {
- 
+
     let fulldate = new Date();
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let dd = fulldate.getDate();
@@ -452,10 +649,10 @@ function gxnowdatetime() {
 
     document.getElementById('gx-input-datetime').value = dd + " " + mmm + " " + yyyy + ", " + hou + ":" + min + " " + ampm;
 }
-    
+
 
 function generateTransactionID() {
-    const bytes = new Uint8Array(5); 
+    const bytes = new Uint8Array(5);
     crypto.getRandomValues(bytes);
     return Array.from(bytes)
         .map(b => b.toString(16).padStart(2, '0'))
@@ -465,33 +662,12 @@ function generateTransactionID() {
 const trxDisplay = document.getElementById("trxID");
 const button = document.getElementById("createBtn");
 
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
     trxDisplay.innerText = generateTransactionID();
 });
 
 
 
 
-const types = [
-    "DuitNow Transfer",
-    "Open 3rd Party Transfer",
-    "Favourite 3rd Party Transfer",
-    "OPEN Interbank",
-    "3rd Party Transfer",
-    "Favourite DuitNow Transfer"
-];
-
-let currentIndex = 0;
-
-const typeText = document.getElementById("typeText");
-const buttonT = document.getElementById("changeTypeBtn");
-
-buttonT.addEventListener("click", function() {
-    currentIndex++;
-    if (currentIndex >= types.length) {
-        currentIndex = 0;
-    }
-    typeText.innerText = types[currentIndex];
-});
 
 
