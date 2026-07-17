@@ -1,6 +1,6 @@
 console.log('Create By  : Awin \nUpload     : 03.09.2024 \nRemodel    : 21.09.2024')
 console.log('Fix Bug \nCIMB AM PM Fix  : 10.09.2024 \nC-Name Bank     : 22.09.2024')
-console.log('New Update \nRhb C-Name bank  : 10.09.2024 \nButton Hover     : 10.09.2024 \nBG Color         : 10.09.2024 \nShadow Button    : 10.09.2024  \n\nInput Change     : 21.09.2024 \nButton Hide      : 21.09.2024 \nDrop Down        : 21.09.2024 \nResit HLB        : 21.09.2024 \n\nResit PBB        : 08.03.2025 \nPng Game         : 08.03.2025 \nFont HLB         : 08.03.2025')
+console.log('New Update \nRhb C-Name bank  : 10.09.2024 \nButton Hover     : 10.09.2024 \nBG Color         : 10.09.2024 \nShadow Button    : 10.09.2024  \n\nInput Change     : 21.09.2024 \nButton Hide      : 21.09.2024 \nDrop Down        : 21.09.2024 \nResit HLB        : 21.09.2024 \n\nResit PBB        : 08.03.2025 \nPng Game         : 08.03.2025 \nFont HLB         : 08.03.2025 \nUpdate Resit RHB : 17.07.2026')
 
 // Button
 const bottoncreatallcimb = document.getElementById('creatcimb')
@@ -151,25 +151,23 @@ function onrhb() {
 
     const reff = document.getElementById("reff-rhb");
 
-    if (autoRandom) {
+if (autoRandom) {
 
-        let p = prefix.value.trim();
+    const prefix = document.getElementById("reff-prefix").value.trim();
 
-        if (p.length != 3) {
-
-            alert("Masukkan 3 Digit Angka depan Reff.");
-
-            return;
-
-        }
-
-        reff.value = generateReference(p);
-
-    } else {
-
-        reff.value = document.getElementById("rhb-input-reff").value;
-
+    if (prefix === "") {
+        alert("ISI NOMOR REFF DEPAN, DI KOTAK KECIL");
+        document.getElementById("reff-prefix").focus();
+        return;
     }
+
+    reff.value = generateReference(prefix);
+
+} else {
+
+    reff.value = document.getElementById("rhb-input-reff").value;
+
+}
 
 }
 
@@ -288,10 +286,8 @@ toggleBtn.onclick = function () {
 function generateRandom17Digit() {
     let number = "";
 
-    // digit pertama 1-9
     number += Math.floor(Math.random() * 9) + 1;
 
-    // 16 digit berikutnya
     for (let i = 1; i < 17; i++) {
         number += Math.floor(Math.random() * 10);
     }
@@ -329,19 +325,76 @@ toggle.onclick = function () {
 
 };
 
-function generateReference(prefix) {
 
-    let result = prefix;
+const tableInput = document.getElementById("rhb-input-reff");
 
-    for (let i = 0; i < 14; i++) {
+toggle.onclick = function () {
 
-        result += Math.floor(Math.random() * 10);
+    autoRandom = !autoRandom;
+
+    if (autoRandom) {
+
+        this.textContent = "ON";
+        this.classList.add("active");
+
+        prefix.classList.add("show");
+
+        tableInput.placeholder = "Random Reff Active";
+
+    } else {
+
+        this.textContent = "OFF";
+        this.classList.remove("active");
+
+        prefix.classList.remove("show");
+        prefix.value = "";
+        prefix.style.width = "0px";
+
+        tableInput.placeholder = "Number Reff";
 
     }
 
-    return result;
+};
 
+
+
+function generateReference(prefix = "") {
+
+    prefix = prefix.replace(/\D/g, ""); // hanya angka
+
+    if (prefix.length > 17) {
+        prefix = prefix.substring(0, 17);
+    }
+
+    let result = prefix;
+
+    const randomLength = 17 - prefix.length;
+
+    for (let i = 0; i < randomLength; i++) {
+        result += Math.floor(Math.random() * 10);
+    }
+
+    return result;
 }
+
+const prefixInput = document.getElementById("reff-prefix");
+
+function resizePrefixInput() {
+
+    if (!prefixInput.classList.contains("show")) return;
+
+    const minWidth = 45;
+    const maxWidth = 250;
+
+    const newWidth = Math.min(
+        maxWidth,
+        Math.max(minWidth, (prefixInput.value.length + 1) * 20)
+    );
+
+    prefixInput.style.width = newWidth + "px";
+}
+
+prefixInput.addEventListener("input", resizePrefixInput);
 
 
 // >>>>>>>>>> HLB CHANGE <<<<<<<<<<
