@@ -686,6 +686,7 @@ h3 {
 
 .prefix-input{
     width:0;
+    min-width:0;
     opacity:0;
     padding:0;
     margin-right:0;
@@ -696,9 +697,20 @@ h3 {
     text-align:center;
     font-weight:bold;
 
-    transition:.35s ease;
+    transition:width .25s ease, opacity .35s ease;
 
     overflow:hidden;
+    box-sizing:border-box;
+}
+
+.prefix-input.show{
+    width:45px;     
+    min-width:45px;
+    opacity:1;
+    padding:5px;
+    margin-right:6px;
+    border:1px solid #ccc;
+    border-radius:4px;
 }
 
 .prefix-input.show{
