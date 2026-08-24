@@ -31,6 +31,12 @@ body {
     min-height: 100vh;
 }
 
+.button-link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .pngGame {
     background-color: rgb(166, 166, 166);
 }
