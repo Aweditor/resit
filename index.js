@@ -151,23 +151,23 @@ function onrhb() {
 
     const reff = document.getElementById("reff-rhb");
 
-if (autoRandom) {
+    if (autoRandom) {
 
-    const prefix = document.getElementById("reff-prefix").value.trim();
+        const prefix = document.getElementById("reff-prefix").value.trim();
 
-    if (prefix === "") {
-        alert("ISI NOMOR REFF DEPAN, DI KOTAK KECIL");
-        document.getElementById("reff-prefix").focus();
-        return;
+        if (prefix === "") {
+            alert("ISI NOMOR REFF DEPAN, DI KOTAK KECIL");
+            document.getElementById("reff-prefix").focus();
+            return;
+        }
+
+        reff.value = generateReference(prefix);
+
+    } else {
+
+        reff.value = document.getElementById("rhb-input-reff").value;
+
     }
-
-    reff.value = generateReference(prefix);
-
-} else {
-
-    reff.value = document.getElementById("rhb-input-reff").value;
-
-}
 
 }
 
@@ -518,12 +518,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
-
-
 // >>>>>>>>>> PBB CHANGE <<<<<<<<<<
 let datetimepbb = document.getElementById('date-time-pbb');
 let pbbinputdatetime = document.getElementById('pbb-input-datetime');
@@ -608,6 +602,8 @@ function selectInputPBB(listPBB) {
 }
 
 
+
+// RYT
 let rytTime = document.getElementById('ryt-time')
 let rytinputdatetime = document.getElementById('ryt-input-datetime')
 
@@ -721,6 +717,96 @@ button.addEventListener("click", function () {
 
 
 
+// BSN
 
+let amountbsn = document.getElementById('amount-bsn');
+let bsninputamount = document.getElementById('bsn-input-amount');
 
+let namebankbsn = document.getElementById('name-bank-bsn');
+let bsninputnamebank = document.getElementById('bsn-input-namebank');
 
+function onbsn() {
+    amountbsn.innerHTML = bsninputamount.value;
+    namebankbsn.innerHTML = bsninputnamebank.value;
+}
+
+const Keywordsbsn = [
+    "Please Select",
+    "AEON Bank",
+    "Affin Bank Berhad",
+    "Alliance Bank Malaysia Berhad",
+    "Al Rajhi Banking & Investment Corporation",
+    "Ambank (M) Berhad",
+    "Bank Islam Malaysia Berhad",
+    "Bank Kerjasama Rakyat Malaysia Berhad",
+    "Bank Muamalat (Malaysia) Bhd",
+    "Bank of America (Malaysia) Berhad",
+    "Bank of China (Malaysia) Berhad",
+    "Bank Pertanian Malaysia Berhad (Agrobank)",
+    "BigPay Malaysia Sdn Bhd",
+    "BNP Paribas (Malaysia) Berhad",
+    "Boost Bank",
+    "Boost eWallet",
+    "China Construction Bank (Malaysia) Berhad",
+    "CIMB Bank Berhad",
+    "Citibank Berhad",
+    "Co-opbank Pertama",
+    "Deutsche Bank (Malaysia) Berhad",
+    "Fass Payment Solutions Sdn Bhd",
+    "Finexus Cards Sdn Bhd",
+    "GXBank",
+    "Hong Leong Bank Berhad",
+    "HSBC Bank Malaysia Berhad",
+    "Industrial & Commercial Bank of China (ICBC)",
+    "Instapay",
+    "JP Morgan Chase Bank Berhad",
+    "KAF Digital Bank",
+    "Kuwait Finance House (Malaysia) Berhad",
+    "Maybank Berhad",
+    "MBSB Bank Berhad",
+    "MCash",
+    "Mizuho Bank (Malaysia) Berhad",
+    "MUFG Bank (Malaysia) Berhad",
+    "OCBC Bank (Malaysia) Berhad",
+    "Paydibs Sdn Bhd",
+    "Public Bank Berhad",
+    "RHB Bank Berhad",
+    "Ryt Bank",
+    "Setel Ventures Sdn Bhd",
+    "ShopeePay Malaysia Sdn Bhd",
+    "Standard Chartered Bank (Malaysia) Berhad",
+    "Sumitomo Mitsui Banking Corporation (M) Berhad",
+    "Touch n Go Digital",
+    "United Overseas Bank (Malaysia) Berhad",
+    "WanPay",
+    "Wise"
+];
+const listBoxbsn = document.getElementById('list-box-bsn');
+const bsninputbox = document.getElementById('bsn-input-namebank');
+function onkeybsn() {
+    const bsninputbox = document.getElementById('bsn-input-namebank');
+    let resultbsn = [];
+    let input = bsninputbox.value;
+    if (input.length) {
+        resultbsn = Keywordsbsn.filter((keyword) => {
+            return keyword.toLowerCase().includes(input.toLowerCase());
+        });
+        console.log(resultbsn)
+    }
+    displaybsn(resultbsn);
+    if (!resultbsn.length) {
+        listBoxbsn.innerHTML = '';
+    }
+}
+
+function displaybsn(resultbsn) {
+    const content = resultbsn.map((listbsn) => {
+        return "<li onclick=selectInputbsn(this)>" + listbsn + "</li>";
+    });
+    listBoxbsn.innerHTML = "<ul>" + content.join('') + "</ul>";
+}
+
+function selectInputbsn(listbsn) {
+    bsninputbox.value = listbsn.innerHTML
+    listBoxbsn.innerHTML = '';
+}

@@ -115,7 +115,7 @@ a:hover {
 .ref-amount-gap {
     display: flex;
     flex-direction: column;
-gap: 10px;
+    gap: 10px;
 
 }
 
@@ -591,11 +591,11 @@ h3 {
     font-weight: 700;
     color: #101828;
     margin-bottom: 2px;
-        min-width: 100px;
+    min-width: 100px;
 }
 
-.detail-list-bank{
-        font-size: 16px;
+.detail-list-bank {
+    font-size: 16px;
     color: #000103;
     font-weight: 400;
     margin-bottom: 3px;
@@ -606,7 +606,7 @@ h3 {
     color: #000103;
     font-weight: 400;
     margin-bottom: 3px;
-        width: 100%;
+    width: 100%;
     padding-block: 0;
     padding-inline: 0;
     border: 0;
@@ -634,7 +634,7 @@ h3 {
 }
 
 .input-in-rhb {
-        background-color: #134eff;
+    background-color: #134eff;
     max-width: 350px;
     padding: 10px;
     gap: 10px;
@@ -670,62 +670,62 @@ h3 {
     background-color: rgba(0, 0, 0, 0.142);
 }
 
-.toggle-btn{
-    margin-left:auto;
-    width:55px;
-    height:28px;
-    border:none;
-    border-radius:12px;
-    background:#d63031;
-    color:#fff;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.2s;
+.toggle-btn {
+    margin-left: auto;
+    width: 55px;
+    height: 28px;
+    border: none;
+    border-radius: 12px;
+    background: #d63031;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
     border-radius: 9999px;
     font-size: 12px;
-        box-shadow: 1px 1px 2px rgb(0, 0, 0);
+    box-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
-.toggle-btn.active{
-    background:#00b894;
+.toggle-btn.active {
+    background: #00b894;
 }
 
-.prefix-input{
-    width:0;
-    min-width:0;
-    opacity:0;
-    padding:0;
-    margin-right:0;
+.prefix-input {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+    padding: 0;
+    margin-right: 0;
 
-    border:none;
-    outline:none;
+    border: none;
+    outline: none;
 
-    text-align:center;
-    font-weight:bold;
+    text-align: center;
+    font-weight: bold;
 
-    transition:width .25s ease, opacity .35s ease;
+    transition: width .25s ease, opacity .35s ease;
 
-    overflow:hidden;
-    box-sizing:border-box;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-.prefix-input.show{
-    width:45px;     
-    min-width:45px;
-    opacity:1;
-    padding:5px;
-    margin-right:6px;
-    border:1px solid #ccc;
-    border-radius:4px;
+.prefix-input.show {
+    width: 45px;
+    min-width: 45px;
+    opacity: 1;
+    padding: 5px;
+    margin-right: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.prefix-input.show{
-    width:45px;
-    opacity:1;
-    padding:5px;
-    margin-right:6px;
-    border:1px solid #ccc;
-    border-radius:4px;
+.prefix-input.show {
+    width: 45px;
+    opacity: 1;
+    padding: 5px;
+    margin-right: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 
@@ -1046,3 +1046,100 @@ hr {
 .blur-text2 {
     padding-top: 35px;
 }
+
+
+/* RESIT BSN */
+.transaction-container {
+    width: 680px;
+    padding: 15px 25px;
+    font-family: Inter, sans-serif;
+}
+
+.row-one {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.row-two {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+
+.label {
+    width: 200px;
+    font-weight: bold;
+    color: #373737;
+}
+
+.colon {
+    width: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.value {
+    flex: 1;
+    color: #555;
+    margin-left: 5px;
+    font-size: 13px;
+}
+
+.value-input {
+        font-family: Inter, sans-serif;
+    flex: 1;
+    color: #555;
+    margin-left: 5px;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    padding-block: 0;
+    padding-inline: 0;
+    border: 0;
+    background: transparent;
+    font-size: 13px;
+}
+
+.value-input:hover {
+    background-color: chartreuse;
+}
+
+.status {
+    display: inline-block;
+    background: #0070ca;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.section-title {
+    color: #f07818;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 39px;
+    margin-bottom: 28px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.resitBSN {
+    background-color: white;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 6px rgb(0, 0, 0);
+}
+

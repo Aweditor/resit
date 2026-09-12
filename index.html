@@ -24,10 +24,12 @@
                 <a href="#to-pbb">PBB</a>
                 <a href="#to-ryt">RYT</a>
                 <a href="#to-gx">GX</a>
+                <a href="#to-bsn">BSN</a>
             </div>
             <div class="button-link">
-                <a class="pngGame"
-                    href="https://github.com/Aweditor/resit/releases/download/AutoInput/Auto.Input.rar"><div>DOWNLOAD</div>AUTO INPUT</INPUT></a>
+                <a class="pngGame" href="https://github.com/Aweditor/resit/releases/download/AutoInput/Auto.Input.rar">
+                    <div>DOWNLOAD</div>AUTO INPUT</INPUT>
+                </a>
                 <a class="pngGame" href="Png Game/index.html" target="_blank">PNG GAME</a>
             </div>
         </div>
@@ -632,10 +634,128 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-        <script src="index.js"></script>
+
+
+
+
+
+
+
+                <!-- >>>>>>>>>> BAR CHANGE BSN <<<<<<<<<< -->
+                <div id="to-pbb" class="input-cimb">
+                    <div id="hidePBB" class="input-in">
+                        <div class="inputAndButton">
+                            <div class="ref-amount-gap">
+
+                                <div class="input-thre">
+                                    <i class="ph ph-currency-circle-dollar"></i>
+                                    <input class="tableInput" id="bsn-input-amount" placeholder="Amount" maxlength="7"
+                                        autocomplete="off" oninput={handleInput(event)} />
+                                </div>
+                                <div class="input-two">
+                                    <i class="ph ph-identification-card"></i>
+                                    <input class="tableInput" type="text" autocomplete="off" id="bsn-input-namebank"
+                                        placeholder="C-Name Bank" onkeyup="onkeybsn()">
+                                </div>
+
+                                <div class="list-box" id="list-box-bsn"></div>
+                            </div>
+                            <div class="input-four">
+                                <button id="creatcimb" class="creat" onclick="onbsn()">Creat</button>
+                                <button id="hide5s" class="hide5s">Hide5s</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resitBSN">
+                        <div class="transaction-container">
+                            <div class="row-one">
+                                <div class="row">
+                                    <div class="label">Reference Number</div>
+                                    <div class="colon">:</div>
+                                    <div class="value">DN202609080040353</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="label">Transaction Status</div>
+                                    <div class="colon">:</div>
+                                    <div class="value">
+                                        <span class="status">Successful</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="label">From Account</div>
+                                <div class="colon">:</div>
+                                <input class="value-input" type="text" value="07002-41-10006210-5 BSN Giro-i">
+                              
+                            </div>
+
+
+                            <div class="section">
+                                <div class="section-title">
+                                    Beneficiary Details
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Recipient's Bank</div>
+                                    <div class="colon">:</div>
+                                    <div class="value" id="name-bank-bsn">Maybank Berhad</div>
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Recipient's Name</div>
+                                    <div class="colon">:</div>
+                                    <input class="value-input" type="text" value="JOHN DOE SUZUKI HONDA">
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Account Number</div>
+                                    <div class="colon">:</div>
+                                    <input class="value-input" type="text" value="123456789010">
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Transaction Type</div>
+                                    <div class="colon">:</div>
+                                    <div class="value">Fund Transfer</div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="section">
+                                <div class="section-title">
+                                    Payment Details
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Amount (RM)</div>
+                                    <div class="colon">:</div>
+                                    <div class="value" id="amount-bsn">1,299.00</div>
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Service Charge (RM)</div>
+                                    <div class="colon">:</div>
+                                    <div class="value">0.00</div>
+                                </div>
+
+                                <div class="row-two">
+                                    <div class="label">Recipient Reference</div>
+                                    <div class="colon">:</div>
+                                    <div class="value">DuitNow Transfer</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="index.js"></script>
 </body>
 
 </html>
